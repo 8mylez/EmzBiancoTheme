@@ -1,0 +1,172 @@
+.emz-filter-offcanvas {
+    &.emz-offcanvas{
+        .emz-offcanvas-header {
+            .emz-filter-close-btn {
+                .unitize(font-size, 42);
+                .unitize(margin-right, -30);
+            }
+        }
+    }
+    .filter-panel {
+        width: 100%;
+        &.is--collapsed {
+            height: auto;
+        }
+    }
+    .filter-panel--flyout {
+        position: relative;
+    }
+    .filter-panel--content.input-type--checkbox {
+        max-height: none;
+        .filter-panel--option {
+            .unitize(height, 72);
+            .unitize(padding-top, 20);
+            .unitize(padding-bottom, 20);
+            border-bottom: 1px solid #EEE;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+            .option--container {
+                position: relative;
+            }
+
+            .filter-panel--input {
+                .unitize(height, 20);
+                .unitize(width, 20);
+                .unitize(border-radius, 20);
+                &.filter-panel--checkbox {
+                    .unitize(border-radius, 20);
+                    &:hover {
+                        border-color: #000;
+                    }
+                    input[type="checkbox"] {
+                        &:checked~.input--state,
+                        &:checked~.checkbox--state {
+                            background-image: none;
+                            background-color: #000;
+                            .unitize(border-radius, 20);
+                            &:before {
+                                .unitize(width, 16);
+                                .unitize(height, 16);
+                                .unitize(line-height, 16);
+                            }
+                        }
+                    }
+                }
+            }
+            .filter-panel--label {
+                color: #000;
+                .unitize(line-height, 20);
+            }
+        }
+        
+    }
+    .filter--multi-selection,
+    .filter--value,
+    .filter--value-tree {
+        .option--container:hover {
+            .filter-panel--label {
+                color: #000;
+            }
+            .filter-panel--input {
+                border-color: #000;
+            }
+        }
+        .option--container:hover {
+            .filter-panel--input.is--disabled {
+                border-color: #000;
+            }
+        }
+    }
+    .action--filter-options {
+        border: 0;
+    }
+    .filter--active {
+        border-top: 0;
+        border-bottom: 1px solid #000;
+        border-right: 0;
+        border-left: 0;
+        border-radius: 0;
+        color: #000;
+        padding: 0;
+        .unitize(font-size, 16);
+        .unitize(padding-bottom, 3);
+        .unitize(margin-left, 5);
+        &[data-filter-param=reset] {
+            padding: 0;
+        }
+        &:hover {
+            .filter--active-icon {
+                color: #000;
+            }
+        }
+    }
+    .filter--active-icon {
+        color: #000;
+        margin: 0;
+        .unitize(margin-left, 5);
+        .unitize(font-size, 10);
+    }
+    .emz-filter--facet-container {
+        .filter-panel {
+            margin: 0;
+            border: 0;
+            background-image: none;
+            background-color: transparent;
+            .unitize(height, 75);
+            border-bottom: 1px solid #eee;
+            &.is--collapsed {
+                height: auto;
+                .filter-panel--flyout {
+                    border: 0;
+                    height: auto;
+                }
+            }
+            .filter-panel--icon {
+                color: #000;
+                .unitize(top, 30);
+                &:before{
+                    color: #000;
+                }
+            }
+            .filter-panel--flyout {
+                .unitize(height, 75);
+            }
+            .filter-panel--title {
+                .unitize(height, 75);
+                .unitize(font-size, 28);
+                color: #000;
+                .unitize(padding-top, 20);
+                .unitize(padding-bottom, 20);
+                margin-bottom: 0;
+
+                ~ .filter-panel--input.filter-panel--checkbox {
+                    .unitize(top, 28);
+                    .unitize(height, 20);
+                    .unitize(width, 20);
+                    .unitize(border-radius, 20);
+                    &.filter-panel--checkbox {
+                        .unitize(border-radius, 20);
+                        &:hover {
+                            border-color: #000;
+                        }
+                        input[type="checkbox"] {
+                            &:checked~.input--state,
+                            &:checked~.checkbox--state {
+                                background-image: none;
+                                background-color: #000;
+                                .unitize(border-radius, 20);
+                                &:before {
+                                    .unitize(width, 16);
+                                    .unitize(height, 16);
+                                    .unitize(line-height, 16);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

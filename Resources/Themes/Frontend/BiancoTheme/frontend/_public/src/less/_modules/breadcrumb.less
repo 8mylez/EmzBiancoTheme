@@ -1,0 +1,32 @@
+.emz-listing-breadcrumb {
+    background-color: #fff;
+    .unitize(height, 70);
+
+    .content--breadcrumb {
+        .breadcrumb--list {
+            text-align: center;
+        }
+
+        .breadcrumb--entry, .breadcrumb--separator {
+            display: inline-block;
+            float: none;
+
+            &:last-child {
+                display: inline-block;
+                float: none;
+            }
+        }
+
+        .breadcrumb--link, .breadcrumb--separator {
+            .unitize(line-height, 70);
+            .unitize(font-size, 16);
+            padding: 0;
+            color: #999;
+        }
+
+        .breadcrumb--separator {
+            .unitize(margin-left, 30);
+            .unitize(margin-right, 30);
+        }
+    }
+}

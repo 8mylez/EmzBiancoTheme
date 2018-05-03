@@ -1,0 +1,193 @@
+.navigation-main {
+	background: #111;
+  border-bottom: 0;
+  .unitize(line-height, @emz-navigation-line-height-mobile - 18);
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 1010;
+  top: 0;
+
+  .emz-header-logo{
+    padding-left: 0;
+    .unitize(padding-top, ((@emz-navigation-line-height-mobile - @emz-navigation-logo-height) / 2));
+
+    .logo--shop{
+      .unitize(height, @emz-navigation-logo-height);
+    }
+  }
+
+  .emz-header-categories{
+    display: none;
+  }
+
+  .emz-header-icons{
+    .unitize(padding-right, 10);
+    .unitize(width, 100);
+    text-align: right;
+
+    &.is-emz-header-icon-left{
+      .unitize(padding-left, 10);
+      padding-right: 0;
+      text-align: left;
+    }
+
+    .navigation--entry{
+      display: inline-block;
+
+      &.entry--notepad, &.entry--account{
+        display: none;
+      }
+
+      .btn{
+        background-color: #111;
+        background-image: none;
+        color: white;
+        border: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+
+        .fa{
+          .unitize(font-size, 20);
+          .unitize(line-height, @emz-navigation-line-height-mobile);
+        }
+      }
+
+      .badge{
+        background-color: #111;
+        color: white;
+        background-image: none;
+        border: 1px white solid;
+        position: absolute;
+        .unitize(top, 15);
+        .unitize(right, -10);
+      }
+    }
+
+    .entry--search{
+      position: static;
+      width: auto;
+
+      .entry--trigger{
+        display: inline-block;
+      }
+    }
+  }
+}
+
+@media screen and(min-width: @tabletViewportWidth) {
+  .navigation-main{
+    .emz-header-icons{
+      .unitize(width, 178);
+
+      .navigation--entry{
+        &.entry--notepad, &.entry--account{
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: @tabletLandscapeViewportWidth) {
+  .navigation-main{
+    .unitize(line-height, @emz-navigation-line-height - 18);
+    
+    .emz-header-logo{
+      .unitize(padding-left, 35);
+      .unitize(width, 202);
+      .unitize(padding-top, ((@emz-navigation-line-height - @emz-navigation-logo-height) / 2));
+    }
+
+    .emz-header-categories{
+      display: block;
+      margin: 0 auto;
+      width: 60%;
+
+      .navigation--list{
+        background: #111;
+        text-align: center;
+
+        .navigation--entry{
+          &.is--active{
+            .navigation--link{
+              background-color: transparent;
+              background-image: none;
+            }
+          }
+
+          &.is--hovered{
+            .navigation--link{
+              background-color: #111;
+            }
+          }
+        }
+
+        .navigation--link{
+          color: #fff;
+          .unitize(font-size, 14);
+          text-transform: uppercase;
+          font-weight: bold;
+          .unitize(letter-spacing, 1);
+          text-decoration: none;
+
+          span:after{
+            content: '';
+            display: block;
+            .unitize(height, 2);
+            width: 0;
+            .unitize(top, -15);
+            position: relative;
+            background: #fff;
+            margin: auto;
+            transition: width .5s ease, background-color .5s ease;
+          }
+
+          &:hover{
+            span:after{
+              width: 100%;
+              background-color: #fff;
+            }
+          }
+        }
+      }
+
+      .js--menu-scroller--arrow{
+        .unitize(height, @emz-navigation-line-height);
+        .unitize(line-height, @emz-navigation-line-height);
+        background-color: #333;
+        background-image: none;
+        border: 0;
+        border-radius: 0;
+        top: 0;
+        color: #fff;
+      }
+    }
+
+    .emz-header-icons{
+      .unitize(padding-right, 35);
+      .unitize(width, 202);
+
+      &.is-emz-header-icon-left{
+        display: none;
+      }
+
+      .navigation--entry{
+        .btn{
+          .fa{
+            .unitize(line-height, @emz-navigation-line-height);
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and(min-width: @desktopViewportWidth) {
+  .navigation-main{
+    .emz-header-categories{
+      width: 65%;
+    }
+  }
+}

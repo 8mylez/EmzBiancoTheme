@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/plugin.xsd">
+    <label lang="de">Bianco Theme</label>
+    <label lang="en">Bianco Theme</label>
+
+    <version>1.0.0</version>
+    <link>http://8mylez.com</link>
+    <author>8mylez</author>
+    <compatibility minVersion="5.2.0" />
+
+    <changelog version="1.0.0">
+        <changes lang="de">Veröffentlichung</changes>
+        <changes lang="en">Release</changes>
+    </changelog>
+</plugin>

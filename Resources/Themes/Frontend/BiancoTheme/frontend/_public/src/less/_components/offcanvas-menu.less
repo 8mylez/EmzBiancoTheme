@@ -1,0 +1,79 @@
+@media screen and(min-width: @tabletViewportWidth) {
+    .off-canvas{
+        -webkit-transform: none;
+        transform: none;
+        .transition(all 0.45s cubic-bezier(.3,0,.15,1));
+        display: none;
+        background: #000;
+        position: fixed;
+        .unitize-width(280);
+        left: auto;
+        z-index: @zindex-offcanvas;
+
+        .sidebar--navigation .navigation--link, .account--menu .navigation--link {
+            .unitize-padding(2, 10);
+            .unitize(line-height, 38);
+        }
+    }
+
+    .sidebar-main {
+        .entry--close-off-canvas {
+            display: block;
+        }
+
+        .icon--arrow-right,
+        .icon--arrow-left {
+            display: inline-block;
+        }
+    }
+}
+
+@media screen and(min-width: @tabletLandscapeViewportWidth) {
+
+    // Reset the styles of the standard off-canvas elements on higher screen sizes
+    .off-canvas {
+        .translate(0, 0);
+        .transition(none);
+        display: block;
+        background: transparent;
+        position: relative;
+        width: auto;
+        height: auto;
+        top: 0;
+        left: 0;
+        z-index: @zindex-offcanvas-higher-viewport;
+
+        .sidebar--navigation .navigation--link {
+            .unitize-padding(10, 10);
+            line-height: inherit;
+        }
+
+        .account--menu .navigation--link {
+            .unitize-padding(5, 0);
+            line-height: inherit;
+        }
+
+        &.emz-offcanvas {
+            z-index: @zindex-offcanvas;
+            position: fixed;
+            left: auto;
+            display: none;
+            .transition(all 0.45s cubic-bezier(.3,0,.15,1));
+            
+            &.is--active {
+                display: block;
+            }
+        }
+    }
+
+    .sidebar-main {
+        .entry--close-off-canvas {
+            display: none;
+        }
+
+        .icon--arrow-right,
+        .icon--arrow-left {
+            display: none;
+        }
+    }
+}

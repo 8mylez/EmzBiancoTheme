@@ -1,0 +1,54 @@
+.emz-emotion--banner-slider{
+  height: 100%;
+
+  .image-slider--container{
+    .arrow{
+      font-family: FontAwesome;
+      .unitize(font-size, 30);
+      color: #fff;
+      border: 0;
+      background-color: transparent;
+
+      &:hover{
+        color: #fff;
+      }
+
+      &.is--left{
+        .unitize(left, 30);
+        &:before{
+          content: "\f177";
+        }
+      }
+
+      &.is--right{
+        .unitize(right, 30);
+        &:before{
+          content: "\f178";
+        }
+      }
+    }
+  }
+
+  .emotion--banner-slider{
+    .image-slider--dots{
+      .unitize(bottom, 30);
+
+      .dot--link{
+        text-indent: 0;
+        background-color: transparent;
+        color: white;
+        border: 0;
+        .unitize(font-size, 18);
+        border-bottom: 3px solid #fff;
+        border-radius: 0;
+        opacity: 0.7;
+        .unitize(padding-bottom, 35);
+
+        &.is--active{
+          background-color: transparent;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+.emz-product--box {
+    width: 25%;
+    .unitize(height, 615);
+    border: 1px solid #F6F6F6;
+    position: relative;
+
+    &:hover {
+        box-shadow: 0 10px 40px rgba(0,0,0,.1);
+        transition-duration: .275s;
+        transition-property: box-shadow;
+        transition-timing-function: cubic-bezier(0.4,0,.2,1);
+
+        .emz-product-actions {
+            .action--note {
+                transform: scale(1);
+            }
+        }
+    }
+
+    .emz-product--box-text-wrapper {
+        .unitize-padding(55, 56.250);
+        overflow: hidden;
+
+        .emz-product--box-text-header h1 {
+            .unitize(margin-top, 28);
+            .unitize(margin-bottom, 16);
+            text-align: center;
+            .unitize(font-size, 21);
+            color: #000;
+        }
+
+        .emz-product--box-text-description p{
+            color: #000;
+            .unitize(font-size, 15);
+            .unitize(line-height, 24);
+
+            &:before{
+                content: "";
+                display: inline-block;
+                background-color: #111;
+                .unitize(width, 50);
+                .unitize(height, 1);
+                vertical-align: middle;
+                .unitize(margin-right, 8);
+            }
+        }
+    }
+
+    .emz-product-highlight {
+        .unitize(padding-top, 16);
+        width: 100%;
+        text-align: center;
+        text-transform: uppercase;
+        color: #666;
+        .unitize(height, 40);
+        .unitize(margin-top, 10);
+        .unitize(margin-bottom, 7);
+        .unitize(font-size, 12);
+        .unitize(letter-spacing, 2);
+    }
+
+    .emz-product-actions {
+        position: absolute;
+        .unitize(right, 24);
+
+
+        .action--note {
+            background: transparent;
+            border: 0;
+            color: #1c1c1c;
+            outline: 0;
+            .unitize(font-size, 20);
+            transform: scale(0);
+            transition: all .375s;
+        }
+    }
+
+    .emz-product-image {
+        .unitize(height, 405);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .emz-product-name {
+        .unitize(font-size, 12);
+        color: #999;
+        .unitize(letter-spacing, 0.6);
+        .unitize(line-height, 16);
+        text-align: center;
+        .unitize-margin(50, 50, 5, 50);
+        .unitize(height, 33);
+
+        a {
+            color: #999;
+        }
+
+        .emz-supplier-name {
+            color: #000;
+        }
+    }
+
+    .emz-product-price {
+        .unitize(height, 44);
+        text-align: center;
+        .unitize(padding-top, 20);
+        color: #000;
+        .unitize(font-size, 13);
+
+        .price--pseudo {
+            text-decoration: line-through;
+            .unitize(margin-right, 10);
+        }
+
+        .price--default.is--discount {
+            color: #B51F29;
+        }
+    }
+}

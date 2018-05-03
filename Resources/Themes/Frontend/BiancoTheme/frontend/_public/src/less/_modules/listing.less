@@ -1,0 +1,48 @@
+.listing--content {
+    padding-top: 0;
+}
+
+.listing--actions {
+    margin-bottom: 0;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+}
+
+.listing--container{
+    background: #fff;
+}
+
+.emz-listing {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding-bottom: 0;
+}
+
+.action--sort {
+    
+    .sort--label {
+        color: #000;
+    }
+
+    .sort--select {
+        select {
+            border: 0;
+            background-color: transparent;
+            background-image: none;
+            color: #000;
+            text-align-last: right;
+            direction: rtl;
+        }
+        
+        &:after {
+            content: "\f0ec";
+            font-family: FontAwesome;
+            transform: rotate(90deg);
+            .unitize(font-size, 15);
+            color: #000;
+            border: 0;
+        }
+    }
+}
