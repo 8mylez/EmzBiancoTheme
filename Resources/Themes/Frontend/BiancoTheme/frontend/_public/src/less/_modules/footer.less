@@ -84,7 +84,14 @@
         color: #fff;
 
         &:after{
+          font-family: 'FontAwesome';
+          content: "\f107";
           color: #fff;
+          .unitize(font-size, 24);
+        }
+
+        &.is--active:after {
+          content: "\f106";
         }
       }
 
@@ -232,6 +239,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        .unitize(margin-top, -10);
 
         .js--fancy-select, select{
           background-color: transparent;
