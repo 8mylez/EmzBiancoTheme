@@ -1,5 +1,4 @@
 {block name="frontend_listing_box_article"}
-    {debug}
     <div class="emz-product--box" data-page-index="{$pageIndex}" data-ordernumber="{$sArticle.ordernumber}">
         <div class="emz-product-highlight">
             {if $sArticle.highlight}
