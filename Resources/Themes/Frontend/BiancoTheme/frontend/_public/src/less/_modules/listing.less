@@ -1,5 +1,6 @@
 .listing--content {
     padding-top: 0;
+    margin-top: 0;
 }
 
 .listing--actions {
@@ -7,6 +8,10 @@
     background: transparent;
     border: 0;
     border-radius: 0;
+
+    .listing--paging, .listing--bottom-paging {
+        display: none;
+    }
 }
 
 .listing--container{
@@ -21,6 +26,9 @@
 }
 
 .action--sort {
+    width: 50%;
+    .unitize(height, 34);
+    .unitize(margin-bottom, 10);
     
     .sort--label {
         color: #000;
@@ -44,5 +52,60 @@
             color: #000;
             border: 0;
         }
+    }
+}
+
+.filter--trigger {
+    width: 50%;
+    float: left;
+    background: none;
+    border: 0;
+    color: black;
+    text-transform: uppercase;
+
+    &.btn:hover {
+        background: none;
+        border: 0;
+        color: #000;
+    }
+
+    .icon--filter {
+        .unitize(margin-right, 10);
+    }
+}
+
+@media screen and(min-width: @tabletViewportWidth) { 
+    .listing--content {
+        .unitize-padding(0, 25);
+    }
+
+    .listing--actions {
+        padding-top: 0;
+    }
+    
+    .filter--trigger {
+        width: auto;
+        float: none;
+    }
+}
+
+@media screen and(min-width: @tabletLandscapeViewportWidth) {
+    .listing--content {
+        .unitize(margin-top, 10);
+        .unitize-padding(0, 32);
+    }
+
+    .action--sort {
+        .unitize(margin-bottom, 10);
+    }
+}
+
+@media screen and(min-width: @desktopViewportWidth) { 
+    .listing--content {
+        .unitize(margin-top, 20);
+    }
+
+    .action--sort {
+        .unitize(margin-bottom, 20);
     }
 }

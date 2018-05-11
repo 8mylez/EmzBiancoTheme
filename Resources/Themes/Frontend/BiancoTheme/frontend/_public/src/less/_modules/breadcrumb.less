@@ -1,6 +1,7 @@
 .emz-listing-breadcrumb {
     background-color: #fff;
     .unitize(height, 70);
+    display: none;
 
     .content--breadcrumb {
         .breadcrumb--list {
@@ -28,5 +29,11 @@
             .unitize(margin-left, 30);
             .unitize(margin-right, 30);
         }
+    }
+}
+
+@media screen and(min-width: @tabletViewportWidth) { 
+    .emz-listing-breadcrumb {
+        display: block;
     }
 }
