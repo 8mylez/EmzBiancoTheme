@@ -8,6 +8,10 @@
     background: transparent;
     border: 0;
     border-radius: 0;
+
+    .listing--paging, .listing--bottom-paging {
+        display: none;
+    }
 }
 
 .listing--container{
@@ -58,6 +62,12 @@
     border: 0;
     color: black;
     text-transform: uppercase;
+
+    &.btn:hover {
+        background: none;
+        border: 0;
+        color: #000;
+    }
 
     .icon--filter {
         .unitize(margin-right, 10);
