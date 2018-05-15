@@ -4,14 +4,12 @@
             border-bottom: 0;
 
             h2 {
-                .unitize(font-size, 28);
+                .unitize(font-size, 24);
                 color: #000;
                 .unitize(padding-top, 40);
-                .unitize(padding-left, 17.5);
             }
             .emz-filter-close-btn {
                 .unitize(font-size, 42);
-                .unitize(margin-right, -30);
             }
         }
     }
@@ -131,6 +129,16 @@
                     height: auto;
                 }
             }
+            
+            &.filter--value {
+                .filter-panel--title {
+                    .unitize(padding-left, 30);
+                }
+                .filter-panel--input {
+                    left: 0;       
+                }
+            }
+
             .filter-panel--icon {
                 color: #000;
                 .unitize(top, 30);
@@ -143,11 +151,13 @@
             }
             .filter-panel--title {
                 .unitize(height, 75);
-                .unitize(font-size, 28);
+                .unitize(font-size, 24);
                 color: #000;
                 .unitize(padding-top, 20);
                 .unitize(padding-bottom, 20);
                 margin-bottom: 0;
+                padding-left: 0;
+                padding-right: 0;
 
                 ~ .filter-panel--input.filter-panel--checkbox {
                     .unitize(top, 28);
@@ -173,6 +183,31 @@
                             }
                         }
                     }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(min-width: @desktopViewportWidth) {
+    .emz-filter-offcanvas {
+        &.emz-offcanvas{
+            .emz-offcanvas-header {
+                h2 {
+                    .unitize(font-size, 28);
+                    .unitize(padding-left, 17.5);
+                }
+
+                .emz-filter-close-btn {
+                    .unitize(margin-right, -30);
+                }
+            }
+        }
+
+        .emz-filter--facet-container {
+            .filter-panel {
+                .filter-panel--title {
+                    .unitize(font-size, 28);
                 }
             }
         }
