@@ -33,6 +33,7 @@
     </li>
     {if !$breadcrumb@last}
         <li class="breadcrumb--separator">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
             <img src="{link file='frontend/_public/src/img/seperator.svg'}" />
         </li>
     {/if}
