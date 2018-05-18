@@ -1,4 +1,16 @@
-@OpenSansPath: "../../fonts";
+@OpenSansPath: "../../../../../../../../../../../../themes/Frontend/Responsive/frontend/_public/vendors/fonts/open-sans-fontface";
+
+/* BEGIN Light */
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Light'),
+  local('OpenSans-Light'),
+  url('@{OpenSansPath}/Regular/OpenSans-Light.woff?@{shopware-revision}') format('woff'),
+  url('@{OpenSansPath}/Regular/OpenSans-Light.ttf?@{shopware-revision}') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+/* END Light */
 
 /* BEGIN Regular */
 @font-face {
@@ -35,3 +47,15 @@
   font-style: normal;
 }
 /* END Bold */
+
+/* BEGIN ExtraBold */
+@font-face {
+  font-family: 'Open Sans';
+  src: local('Open Sans Extra Bold'),
+  local('OpenSans-ExtraBold'),
+  url('@{OpenSansPath}/Bold/OpenSans-ExtraBold.woff?@{shopware-revision}') format('woff'),
+  url('@{OpenSansPath}/Bold/OpenSans-ExtraBold.ttf?@{shopware-revision}') format('truetype');
+  font-weight: 800;
+  font-style: normal;
+}
+/* END ExtraBold */
