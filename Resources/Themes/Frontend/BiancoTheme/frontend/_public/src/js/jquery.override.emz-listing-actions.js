@@ -14,4 +14,7 @@ $.overridePlugin('swListingActions', {
 
         $.publish('plugin/swListingActions/onUpdateActiveFilterElement', [this, param, label]);
     },
+    updateFilterCloseButton: function (totalCount) {
+        
+    },
 });
