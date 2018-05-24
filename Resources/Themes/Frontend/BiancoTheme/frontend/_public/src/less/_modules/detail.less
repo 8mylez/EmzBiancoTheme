@@ -10,11 +10,21 @@
     .unitize(padding-left, 50);
     .unitize(padding-right, 50);
 
+    .emz-detail-product-gallery {
+        width: 60%;
+        display: flex;
+    }
+
+    .emz-detail-product-details {
+        width: 40%;
+    }
+
     .emz-detail-product-gallery-supplier {
         .unitize(height, 70);
         .unitize(width, 70);
         display: flex;
         align-items: center;
+        .unitize(margin-bottom, 50);
 
         a {
             img {
@@ -22,9 +32,5 @@
                 max-height: 100%;
             }
         }
-    }
-
-    .emz-detail-product-gallery-items {
-        .unitize(margin-top, 50);
     }
 }

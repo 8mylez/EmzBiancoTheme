@@ -54,7 +54,18 @@
 }
 
 .image-slider--thumbnails {
-  .unitize(height, 510);
+  .unitize(height, 412);
+
+  .thumbnails--arrow {
+    border-radius: 0;
+    color: #000;
+    border: 0;
+
+    &:hover{
+      border: 0;
+      color: #000;
+    }
+  }
 
   .thumbnail--link {
     .unitize(height, 103);
@@ -66,6 +77,7 @@
     margin: 0;
     display: flex;
     align-items: center;
+    justify-content: center;
 
     &.is--active {
       border-bottom: 1px solid #000;
