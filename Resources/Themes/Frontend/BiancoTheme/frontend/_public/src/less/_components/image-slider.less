@@ -52,3 +52,23 @@
     }
   }
 }
+
+.image-slider--thumbnails {
+  .unitize(height, 510);
+
+  .thumbnail--link {
+    .unitize(height, 103);
+    .unitize(padding-top, 10);
+    .unitize(padding-bottom, 10);
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid #ccc;
+    margin: 0;
+    display: flex;
+    align-items: center;
+
+    &.is--active {
+      border-bottom: 1px solid #000;
+    }
+  }
+}
