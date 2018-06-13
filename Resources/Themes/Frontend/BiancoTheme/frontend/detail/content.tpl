@@ -1,7 +1,15 @@
 {extends file="parent:frontend/detail/content.tpl"}
 
 {block name="frontend_index_content_inner"}
-    <div class="content emz-product--details" itemscope itemtype="http://schema.org/Product" data-ajax-wishlist="true" data-compare-ajax="true"{if $theme.ajaxVariantSwitch} data-ajax-variants-container="true"{/if}>
+    <div class="content emz-product--details" 
+        itemscope 
+        itemtype="http://schema.org/Product" 
+        data-ajax-wishlist="true" 
+        data-compare-ajax="true"
+        {if $theme.ajaxVariantSwitch} data-ajax-variants-container="true"{/if} 
+        data-orderNumberSelector=".emz-detail-product-style .emz-ordernumber"
+        data-productDetailsSelector=".emz-product--details"
+    >
         <div class="emz-detail-product-gallery" data-image-slider="true" data-thumbnails=".image--thumbnails">
             {include file="frontend/detail/emz-detail-product-gallery.tpl"}
         </div>
@@ -46,7 +54,7 @@
             
             <div class="emz-detail-product-style">
                 <h2><strong>{s namespace="frontend/detail/index" name="EmzStyleAttributeLabel"}Style: {/s}</strong>
-                {$sArticle.attr1} - {$sArticle.ordernumber}</h2>
+                {$sArticle.attr1} - <span class="emz-ordernumber">{$sArticle.ordernumber}</span></h2>
             </div>
 
             <div class="emz-detail-product-note-action">
@@ -60,17 +68,27 @@
                     </button>
                 </form>
             </div>
-            
-            <div class="emz-detail-product-properties">
+
+            {debug}
+
+            {if $sArticle.sConfigurator}
+                <div class="emz-detail-product--configurator product--configurator">
+                    {include file="frontend/detail/emz-config-variants.tpl"}
+                </div>
+            {/if}
+
+            {if $sArticle.sProperties}
                 {foreach $sArticle.sProperties as $property}
                     {if $property.name == "Schnitt"}
-                        <strong>{$property.name}:</strong>
-                        {foreach $property.values as $value}
-                            {$value} {if !$value@last},{/if}
-                        {/foreach}
+                        <div class="emz-detail-product-properties">
+                            <strong>{$property.name}:</strong>
+                            {foreach $property.values as $value}
+                                {$value}{if !$value@last},{/if}
+                            {/foreach}
+                        </div>
                     {/if}
                 {/foreach}
-            </div>
+            {/if}
             
             <div class="emz-detail-product-description-link">
                 <strong>{s namespace="frontend/detail/index" name="EmzDescriptionLink"}
