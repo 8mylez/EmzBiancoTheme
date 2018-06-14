@@ -32,6 +32,7 @@ SHOPWARE_EOD;
         'src/js/jquery.override.emz-filter-component.js',
         'src/js/jquery.override.emz-listing-actions.js',
         'src/js/jquery.override.emz-subcategory-nav.js',
+        'src/js/jquery.emz-detail-read-more.js',
 
         'src/js/jquery.emz-bianco-theme.js'
     ];
