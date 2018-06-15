@@ -9,6 +9,8 @@
     background-color: #fff;
     .unitize(padding-left, 50);
     .unitize(padding-right, 50);
+    flex-direction: row;
+    flex-wrap: wrap;
 
     .emz-detail-product-gallery {
         width: 65%;
@@ -33,7 +35,6 @@
         }
 
         .emz-detail-product-style {
-            //.unitize(margin-right, 30);
             .unitize(padding-bottom, 24);
             .unitize(line-height, 30);
             border-bottom: 1px solid #eee;
@@ -63,6 +64,61 @@
             }
         }
 
+        .emz-detail-product--configurator {
+            border-bottom: 1px solid #eee;
+            .unitize(height, 70);
+
+            .configurator--form {
+                .unitize(padding-top, 20);
+                .unitize(padding-bottom, 20);
+            }
+
+            .emz-detail-product-variants {
+                display: flex;
+
+                .configurator--label, .configurator--select{
+                    width: 50%;
+                    .unitize(font-size, 15);
+                }
+
+                .configurator--select {
+                    text-align: right;
+                    .unitize(height, 34);
+                
+                    label {
+                        display: inline-block;
+                        cursor: pointer;
+                        .unitize(margin-top, 4);
+                        .unitize(margin-bottom, 2);
+                        border-radius: 22px;
+                        border: 1px solid #fff;
+
+                        &.is--active, &:hover {
+                            border: 1px solid #999;
+                        }
+                        
+                        .emz-configurator--select-label {
+                            .unitize(height, 22);
+                            .unitize(width, 22);
+                            .unitize(border-radius, 22);
+                            border: 2px solid #fff;
+                        }
+                    }
+                }
+            }
+
+            .configurator--label-groupname {
+                color: #000;
+                display: inline-block;
+            }
+
+            .configurator--label-selected-value {
+                font-weight: 100;
+                color: #000;
+                display: inline-block;
+            }
+        }
+
         .emz-detail-product-properties {
             .unitize(padding-top, 20);
             .unitize(padding-bottom, 20);
@@ -70,6 +126,7 @@
             .unitize(font-size, 15);
             color: #000;
             .unitize(line-height, 30);
+            .unitize(height, 70);
         }
 
         .emz-detail-product-description-link {
@@ -79,6 +136,7 @@
             border-bottom: 1px solid #eee;
             .unitize(line-height, 30);
             .unitize(font-size, 15);
+            .unitize(height, 70);
 
             .fa-angle-right {
                 .unitize(font-size, 18);
@@ -91,6 +149,7 @@
             .unitize(padding-bottom, 20);
             color: #000;
             .unitize(line-height, 30);
+            .unitize(height, 70);
 
             .emz-detail-product-info {
                 width: 70%;
@@ -134,6 +193,32 @@
 
             .product--delivery .delivery--status-available {
                 background-color: #80BA27;
+            }
+        }
+    }
+
+    .emz-detail-product-details-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        .emz-detail-product-details-info-box {
+            width: 50%;
+            .unitize(max-height, 140);
+            overflow: hidden;
+            transition: max-height .3s;
+        }
+
+        .emz-detail-product-details-info-footer {
+            width: 100%;
+
+            .emz-detail-product-details-info-more {
+                cursor: pointer;
+                
+                i {
+                    transition: transform .3s;
+                    .unitize(font-size, 60);
+                }
             }
         }
     }

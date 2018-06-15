@@ -4,7 +4,7 @@
         <div class="emz-detail-product-variants">
             <div class="configurator--label">
                 <div class="configurator--label-groupname">
-                    {$sConfigurator.groupname}:
+                    <strong>{$sConfigurator.groupname}:</strong>
                 </div>
                 <div class="configurator--label-selected-value">
                     {foreach $sConfigurator.values as $configValue}
@@ -27,8 +27,8 @@
                         />
 
                         {if $configValue.attributes.core}
-                            <label for="group[{$configValue.groupID}][{$configValue.optionID}]">
-                                <div style="height: 20px; width: 30px; background-color: {$configValue.attributes.core->get('color_code')}"></div>
+                            <label for="group[{$configValue.groupID}][{$configValue.optionID}]" {if $configValue.selected}class="is--active"{/if}>
+                                <div class="emz-configurator--select-label" style="background-color: {$configValue.attributes.core->get('color_code')}"></div>
                             </label>
                         {/if}
                     {/if}
