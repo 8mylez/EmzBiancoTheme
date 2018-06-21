@@ -115,32 +115,30 @@
         </div>
         <div class="emz-detail-product-details-info" data-emz-detail-read-more="true">
             <div class="emz-detail-product-details-info-left emz-detail-product-details-info-box">
-                <div class="emz-detail-product-details-info-header">Details</div>
+                <div class="emz-detail-product-details-info-header">
+                    {s namespace="frontend/detail/index" name="EmzDetailsAttributeLabel"}Details{/s}
+                </div>
                 <div class="emz-detail-product-details-info-content">
-                    <ul>
-                        <li>Regular Fit</li>
-                        <li>Fallendes Revers</li>
-                        <li>Verschluss oben: Reißverschluss und Haken</li>
-                        <li>Anzahl der Knöpfe: 2</li>
-                        <li>Brusttaschen mit Leiste</li>
-                        <li>Taschen oben: Pattentaschen</li>
-                        <li>Innentaschen mit Paspel</li>
-                        <li>Manschetten mit Kissing-Buttons</li>
-                        <li>Seitenschlitz</li>
-                        <li>Mit Innenfutter</li>
-                        <li>Rückenlänge: 74 cm</li>
-                        <li>Haken mit Reißverschluss</li>
-                        <li>Vordertaschen: Eingrifftasche</li>
-                        <li>Gesäßtaschen: Leistentasche</li>
-                        <li>Fußweite: 38,0 cm</li>
-                        <li>Verpackung: Schutzbeutel</li>
-                    </ul>
+                    {if $sArticle.sProperties}
+                        <ul>
+                            {foreach $sArticle.sProperties as $property}
+                                <li>
+                                    {if $property.attributes.core && $property.attributes.core->get('emz_show_frontend')}{$property.name}:{/if}
+                                    {foreach $property.values as $value}
+                                        {$value}{if !$value@last},{/if}
+                                    {/foreach}
+                                </li>
+                            {/foreach}
+                        </ul>
+                    {/if}
                 </div>
             </div>
             <div class="emz-detail-product-details-info-right emz-detail-product-details-info-box">
-                <div class="emz-detail-product-details-info-header">Grösse und Passform</div>
+                <div class="emz-detail-product-details-info-header">
+                    {s namespace="frontend/detail/index" name="EmzSizeAttributeLabel"}Grösse und Passform{/s}
+                </div>
                 <div class="emz-detail-product-details-info-content">
-                    Das Model trägt die Größe 50, bei einer Körpergröße von 189 cm, Brustumfang von 99 cm, Taillenumfang von 78 cm  und Hüftumfang von 94 cm.
+                    {$sArticle.attr2}
                 </div>
             </div>
             <div class="emz-detail-product-details-info-footer">
@@ -148,6 +146,17 @@
                     <i class="fa fa-angle-down" aria-hidden="true"></i>
                 </div>
             </div>
+        </div>
+    </div>
+    <div style="width: 100%; background-color: #eee;">
+        <div style="font-size: 30px; margin-top: 75px; margin-bottom: 40px; padding-left: 63px; text-transform: uppercase; color: #000; font-weight: 100;">
+            Produktbeschreibung
+        </div>
+    </div>
+    <div style="width: 100%; background-color: #fff; display: flex; max-height: 800px;">
+        <div style="width: 50%; background-color: pink;">HI</div>
+        <div style="width: 50%; background-color: #00ccff; text-align: right;">
+            <img src="http://via.placeholder.com/688x1044" />
         </div>
     </div>
 {/block}
