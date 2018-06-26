@@ -167,7 +167,7 @@
                 font-weight: 800;
             }
 
-            .emz-detail-product-pseuoprice {
+            .emz-detail-product-pseudoprice {
                 color: #B51F29; 
                 text-decoration: line-through;
             }
@@ -372,4 +372,70 @@
             }
         }
     }       
+}
+
+.emz-product--details-recommendation-wrapper {
+    .tab--navigation {
+        display: block;
+        text-align: center;
+
+        .tab--link {
+            background: transparent;
+            .unitize(font-size, 14);
+            border: 0;
+            color: #000;
+
+            &:after{
+                content: '';
+                display: block;
+                .unitize(height, 2);
+                width: 0;
+                .unitize(top, 0);
+                position: relative;
+                background: #000;
+                margin: auto;
+                transition: width .5s ease, background-color .5s ease;
+            }
+    
+            &:hover{
+                color: #000;
+
+                &:after{
+                    width: 100%;
+                    background-color: #000;
+                }
+            }
+
+            &.is--active {
+                &:after{
+                    width: 100%;
+                    background-color: #000;
+                }
+            }
+        }
+
+        .product--rating-count-wrapper {
+            display: none;
+        }
+    }
+
+    .tab-menu--cross-selling {
+        .tab--container {
+            display: none;
+
+            &.has--content.is--active {
+                display: block;
+            }
+        }
+    }
+
+    .tab--header {
+        display: none;
+    }
+
+    .tab--container-list {
+        .tab--container {
+            border: 0;
+        }
+    }
 }

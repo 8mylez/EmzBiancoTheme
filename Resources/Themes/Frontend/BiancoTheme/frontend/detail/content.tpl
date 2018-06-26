@@ -196,18 +196,25 @@
             </div>
         </div>
         <div class="emz-product--details-description-box emz-product--details-description-box-right">
-            <img srcset="{$sArticle.images[0].thumbnails[4].sourceSet}"
-                alt="{$desc}"
-                title="{$desc|truncate:160}" />
-            <img srcset="{$sArticle.images[1].thumbnails[4].sourceSet}"
-                alt="{$desc}"
-                title="{$desc|truncate:160}" />
-            <img srcset="{$sArticle.images[2].thumbnails[4].sourceSet}"
-                alt="{$desc}"
-                title="{$desc|truncate:160}" />
-                <!--477x723 thumbnail size-->
-
-            LOOP THROUGH ALL IMAGES AND SHOW THE SELECTED ONE
+            {foreach $sArticle.images as $articleImage}
+                {if $articleImage.attributes.image && $articleImage.attributes.image->get('emz_detail_description')}
+                    <img srcset="{$articleImage.thumbnails[4].sourceSet}"
+                        alt="{$articleImage.description}"
+                        title="{$articleImage.description|truncate:160}" />
+                        <!--477x723 thumbnail size-->        
+                {/if}
+            {/foreach}
+        </div>
+    </div>
+    <div class="emz-product--details-description-headline-wrapper">
+        <div class="emz-product--details-description-headline">
+            {s namespace="frontend/detail/index" name="EmzRecommendationHeadline"}8mylez Empfiehlt{/s}
+        </div>
+    </div>
+    <div class="emz-product--details-recommendation-wrapper">
+        <div class="tab-menu--cross-selling"{if $sArticle.relatedProductStreams} data-scrollable="true"{/if}>
+            {include file="frontend/detail/content/tab_navigation.tpl"}
+            {include file="frontend/detail/content/tab_container.tpl"}
         </div>
     </div>
 {/block}
