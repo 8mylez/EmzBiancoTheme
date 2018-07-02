@@ -184,7 +184,7 @@
                                     {if $property.attributes.core && $property.attributes.core->get('emz_full_hide_details')}
                                         {foreach $property.options as $option}
                                             <li>
-                                                {if $option.attributes.core && $option.attributes.core->get('emz_wash_icon')}<div class="icon icon-{$option.attributes.core->get('emz_wash_icon')}"></div>{/if}<div class="icon-label">{$option.name}</div>
+                                                {if $option.attributes.core && $option.attributes.core->get('emz_wash_icon')}<div class="icon icon---{$option.attributes.core->get('emz_wash_icon')}"></div>{/if}<div class="icon-label">{$option.name}</div>
                                             </li>
                                         {/foreach}
                                     {/if}
