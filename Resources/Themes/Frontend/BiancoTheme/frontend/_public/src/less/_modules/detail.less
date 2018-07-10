@@ -216,64 +216,6 @@
 
     .emz-detail-product-details-info {
         display: none;
-        //display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        .unitize(padding-top, 70);
-        .unitize(padding-right, 60);
-        .unitize(padding-bottom, 10);
-        .unitize(padding-left, 80);
-
-        .emz-detail-product-details-info-box {
-            width: 50%;
-            overflow: hidden;
-            transition: max-height .3s;
-
-            &.emz-detail-product-details-info-left {
-                .unitize(padding-left, 130);
-                .unitize(padding-right, 80);
-                border-right: 1px solid #000;
-            }
-
-            &.emz-detail-product-details-info-right {
-                .unitize(padding-left, 80);
-                .unitize(padding-right, 60);
-            }
-
-            .emz-detail-product-details-info-header {
-                color: #000;
-                text-transform: uppercase;
-                .unitize(font-size, 14);
-                .unitize(margin-top, 16);
-                .unitize(margin-bottom, 16);
-                font-weight: bold;
-            }
-
-            .emz-detail-product-details-info-content {
-                color: #000;
-                .unitize(font-size, 14);
-                .unitize(line-height, 22);
-
-                ul li {
-                    list-style-type: none;
-                }
-            }
-        }
-
-        .emz-detail-product-details-info-footer {
-            width: 100%;
-            text-align: center;
-
-            .emz-detail-product-details-info-more {
-                cursor: pointer;
-                color: #000;
-                
-                i {
-                    transition: all .3s;
-                    .unitize(font-size, 60);
-                }
-            }
-        }
     }
 
     .emz-detail-product-gallery-supplier {
@@ -654,6 +596,67 @@
 
 @media screen and(min-width: @tabletLandscapeViewportWidth) { 
     .emz-product--details {
+        .emz-detail-product-details-info {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            .unitize(padding-top, 70);
+            .unitize(padding-right, 60);
+            .unitize(padding-bottom, 10);
+            .unitize(padding-left, 80);
+    
+            .emz-detail-product-details-info-box {
+                width: 50%;
+                overflow: hidden;
+                transition: max-height .3s;
+    
+                &.emz-detail-product-details-info-left {
+                    .unitize(padding-left, 130);
+                    .unitize(padding-right, 80);
+                    border-right: 1px solid #000;
+                }
+    
+                &.emz-detail-product-details-info-right {
+                    .unitize(padding-left, 80);
+                    .unitize(padding-right, 60);
+                }
+    
+                .emz-detail-product-details-info-header {
+                    color: #000;
+                    text-transform: uppercase;
+                    .unitize(font-size, 14);
+                    .unitize(margin-top, 16);
+                    .unitize(margin-bottom, 16);
+                    font-weight: bold;
+                }
+    
+                .emz-detail-product-details-info-content {
+                    color: #000;
+                    .unitize(font-size, 14);
+                    .unitize(line-height, 22);
+    
+                    ul li {
+                        list-style-type: none;
+                    }
+                }
+            }
+    
+            .emz-detail-product-details-info-footer {
+                width: 100%;
+                text-align: center;
+    
+                .emz-detail-product-details-info-more {
+                    cursor: pointer;
+                    color: #000;
+                    
+                    i {
+                        transition: all .3s;
+                        .unitize(font-size, 60);
+                    }
+                }
+            }
+        }
+
         .emz-detail-product-gallery {
             .emz-detail-product-gallery-items {
                 display: block;
