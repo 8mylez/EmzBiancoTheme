@@ -1,0 +1,90 @@
+.box--emzslider {
+    padding: 0;
+    background-color: #fff;
+
+    .box--content {
+        padding: 0;
+        border: 0;
+        border-radius: 0;
+    }
+
+    .product--badges{
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 600;
+
+        .product--badge {
+            float: none;
+        }
+
+        .badge--discount {
+            color: #e74c3c;
+            background-color: #fff;
+            padding: 0;
+            .unitize(margin-top, 40);
+            .unitize(margin-bottom, 17);
+            .unitize(font-size, 12);
+            .unitize(height, 24);
+        }
+
+        .badge--recommend {
+            display: none;
+        }
+    }
+
+    .product--info {
+        .product--title {
+            .unitize(font-size, 14);
+            font-weight: 400;
+            color: #999;
+            .unitize(margin-top, 50);
+            .unitize(padding-right, 45);
+            .unitize(padding-left, 45);
+            .unitize(margin-bottom, 8);
+            .unitize(height, 64);
+            white-space: normal;
+
+            &:hover {
+                color: #999;
+            }
+
+            .emz-product--supplier {
+                .unitize(font-size, 14);
+                font-weight: 700;
+                color: #000;
+                display: inline-block;
+
+                .emz-product--supplier-name {
+                    display: inline-block;
+                }
+            }
+        }
+
+        .product--price-info {
+            .unitize(height, 64);
+
+            .product--price {
+                .price--default {
+                    .unitize(font-size, 13);
+                    color: #000;
+
+                    &.is--discount {
+                        color: #B51F29;
+                    }
+                }
+
+                .price--pseudo {
+                    color: #000;
+                }
+            }
+        }
+    }
+}
+
+.product--box {
+    .product--image {
+        .unitize(max-width, 120);
+        margin: 0 auto;
+    }
+}

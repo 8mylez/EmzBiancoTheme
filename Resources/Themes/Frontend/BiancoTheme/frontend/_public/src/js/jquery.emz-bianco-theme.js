@@ -6,6 +6,10 @@
         .addPlugin('*[data-subcategory-nav="true"]', 'swSubCategoryNav', ['m'])
         .removePlugin('*[data-collapse-cart="true"]', 'swCollapseCart', ['xs', 's'])
         .addPlugin('*[data-collapse-cart="true"]', 'swCollapseCart', ['m','l','xl'])
+        .addPlugin('*[data-emz-detail-read-more="true"]', 'emzDetailReadMore')
+        .addPlugin('.emz-product--details-description-title', 'swCollapsePanel', {
+            'contentSiblingSelector': '.emz-product--details-description-slide'
+        }, ['xs', 's'])
     ;
 
     if(window.StateManager.isCurrentState('l')){

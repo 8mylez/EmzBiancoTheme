@@ -1,3 +1,11 @@
+body {
+    background-color: #eee;
+}
+
+.content {
+    float: none;
+}
+
 .content-main {
     .unitize(margin-top, @emz-navigation-line-height-mobile + 20);
 }
@@ -16,7 +24,20 @@
     }
 }
 
+.is--ctl-detail {
+    .content-main {
+        .unitize(margin-top, @emz-navigation-line-height-mobile);
+        box-shadow: none;
+    }
+}
+
 @media screen and(min-width: @tabletLandscapeViewportWidth) {
+    .is--ctl-detail {
+        .content-main {
+            margin-top: 0;
+        }
+    }
+
     .content-main {
         .unitize(margin-top, @emz-navigation-line-height + 20);
     }
@@ -25,5 +46,9 @@
         .content-main.emz-sub-navigation-active {
             .unitize(margin-top, @emz-navigation-line-height + 50);
         }
+    }
+
+    .emz-detail-conversion-bar {
+        .unitize(margin-top, @emz-navigation-line-height-mobile + 60);
     }
 }
