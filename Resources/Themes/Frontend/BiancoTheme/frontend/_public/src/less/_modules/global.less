@@ -31,6 +31,32 @@ body {
     }
 }
 
+.is--ctl-custom, .is--ctl-forms {
+    .content-main {
+        background: transparent;
+        box-shadow: none;
+        color: #000;
+
+        h1, h2 {
+            color: #000;
+        }
+    }
+
+    .sidebar--navigation {
+        background: transparent;
+
+        .navigation--link {
+            color: #000;
+            .unitize(font-size, 18);
+            font-weight: bold;
+
+            &.is--active {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
 @media screen and(min-width: @tabletLandscapeViewportWidth) {
     .is--ctl-detail {
         .content-main {
