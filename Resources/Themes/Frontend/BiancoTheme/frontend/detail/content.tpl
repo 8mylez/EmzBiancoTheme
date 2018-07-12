@@ -165,19 +165,18 @@
             <div class="emz-product--details-description-content-wrapper">
                 <div class="emz-product--details-description">
                     <div class="emz-product--details-description-title">
-                        Beschreibung
+                        {s namespace="frontend/detail/index" name="EmzDescriptionHeadline"}Beschreibung{/s}
                     </div>
                     <div class="emz-product--details-description-content emz-product--details-description-slide">
-                        Gehobenes Basic fürs Office: der BOSS Anzug aus besonders softer Schurwolle. Der gerade geschnittene Herren-Zweiteiler besteht aus einem Sakko mit AMF-Nähten und charakteristischem Knopf am linken Ärmel sowie einer Bundfaltenhose mit Reißverschluss. Makellose Business Looks sind mit diesem präzise gefertigten Ensemble ein Leichtes.
+                        {$sArticle.description_long}
                     </div>
                 </div>
                 <div class="emz-product--details-description">
                     <div class="emz-product--details-description-title">
-                        MATERIAL UND PFLEGE
+                        {s namespace="frontend/detail/index" name="EmzDescriptionAdditionalHeadline"}Material und Pflege{/s}
                     </div>
                     <div class="emz-product--details-description-content-additional emz-product--details-description-slide">
-                        Materialangabe: 100% Schurwolle, Futter: 64% Viscose, 36% Polyester, Ärmelfutter: 64% Viscose, 36% Polyester
-
+                        {$sArticle.attr3}
                         <div class="emz-product--details-description-content-additional-icons">
                             {if $sArticle.sProperties}
                                 <ul>
