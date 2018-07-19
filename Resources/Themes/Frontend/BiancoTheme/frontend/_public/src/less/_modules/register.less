@@ -1,0 +1,67 @@
+.steps--container {
+    .unitize(margin-top, @emz-navigation-line-height);
+
+    .steps--content {
+        .steps--list {
+            .steps--entry {
+                &.is--active {
+                    .icon {
+                        color: #000;
+                    }
+
+                    .text--inner {
+                        color: #000;
+                    }
+                }
+
+                &.step--basket {
+                    width: 30%;
+                    text-align: left;
+                }
+
+                &.step--register {
+                    width: 40%;
+                }
+
+                &.step--confirm {
+                    width: 30%;
+                    text-align: right;
+
+                    .text {
+                        text-align: right;
+                    }
+                }
+
+                .icon {
+                    background: none;
+                    color: #7f7f7f;
+                    .unitize(font-size, 30);
+                    padding: 0;
+                    .unitize(line-height, 52);
+                }
+
+                .text {
+                    width: auto;
+                    margin: 0;
+                }
+
+                .text--inner {
+                    color: #7f7f7f;
+                    .unitize(font-size, 22);
+                    vertical-align: baseline;
+                }
+            }
+        }
+    }
+}
+
+.register--advantages-list, .required_fields {
+    color: #000;
+}
+
+.btn.is--primary {
+    background-image: none;
+    background-color: #000;
+    color: #fff;
+    border-radius: 0;
+}

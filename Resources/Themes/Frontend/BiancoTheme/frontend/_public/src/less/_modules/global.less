@@ -2,6 +2,10 @@ body {
     background-color: #eee;
 }
 
+a {
+    color: #000;
+}
+
 .content {
     float: none;
 }
@@ -56,6 +60,37 @@ body {
         }
     }
 }
+
+.is--ctl-register, .is--ctl-checkout {
+    
+    &.is--act-cart, &.is--act-finish {
+        .content-main {
+            .unitize(margin-top ,@emz-navigation-line-height + 20);
+        }   
+    }
+
+    .content-main {
+        margin-top: 0;
+        background: transparent;
+        box-shadow: none;
+        min-height: auto;
+
+        .register--content {
+            float: right;
+            margin-top: 0;
+        }
+
+        .register--login {
+            float: left;
+            margin-top: 0;
+        }
+
+        .confirm--content {
+            padding-top: 0;
+        }
+    }
+}
+
 
 @media screen and(min-width: @tabletLandscapeViewportWidth) {
     .is--ctl-detail {

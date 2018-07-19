@@ -1,0 +1,73 @@
+
+
+.shipping-payment--information {
+    display: flex;
+    .unitize(margin-bottom, 25);
+
+    .confirm--inner-container {
+        float: none;
+        width: 100%;
+
+        &:first-child {
+            margin-right: 2%;
+        }
+
+        &:last-child {
+            margin-left: 2%;
+        }
+
+        .payment--method-list, .dispatch--method-list,  {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            border-radius: 0;
+            border: 0;
+
+            .panel--body {
+                width: 100%;
+            }
+        }
+
+        .method--description {
+            display: none;
+        }
+
+        .basket--footer {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            color: #000;
+            background-color: #fff;
+            border-radius: 0;
+            border: 0;
+
+            .aggregation--list {
+                float: none;
+                width: 100%;
+            }
+        }
+
+        .panel--title {
+            text-align: center;
+            border: 0;
+        }
+    }
+}
+
+.content--confirm {
+    .confirm--outer-container {
+        .confirm--actions {
+            float: none;
+        
+            &.actions--bottom {
+                .unitize(margin-top, 75);
+            }
+        }
+
+        .table--footer {
+            .footer--benefit {
+                color: #000;
+            }
+        }
+    }
+}
