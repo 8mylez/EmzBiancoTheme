@@ -207,15 +207,17 @@
             {/foreach}
         </div>
     </div>
-    <div class="emz-product--details-description-headline-wrapper">
-        <div class="emz-product--details-description-headline">
-            {s namespace="frontend/detail/index" name="EmzRecommendationHeadline"}8mylez Empfiehlt{/s}
-        </div>
-    </div>
+    {if $sArticle.sSimilarArticles || $sArticle.sRelatedArticles}
     <div class="emz-product--details-recommendation-wrapper">
+        <div class="emz-product--details-description-headline-wrapper">
+            <div class="emz-product--details-description-headline">
+                {s namespace="frontend/detail/index" name="EmzRecommendationHeadline"}8mylez Empfiehlt{/s}
+            </div>
+        </div>
         <div class="tab-menu--cross-selling"{if $sArticle.relatedProductStreams} data-scrollable="true"{/if}>
             {include file="frontend/detail/content/tab_navigation.tpl"}
             {include file="frontend/detail/content/tab_container.tpl"}
         </div>
     </div>
+    {/if}
 {/block}
