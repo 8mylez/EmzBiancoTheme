@@ -52,9 +52,9 @@
                 <h1>{$sArticle.articleName}</h1>
             </div>
             
-            <div class="emz-detail-product-style">
-                <h2><strong>{s namespace="frontend/detail/index" name="EmzStyleAttributeLabel"}Style: {/s}</strong>
-                {$sArticle.attr1} - <span class="emz-ordernumber">{$sArticle.ordernumber}</span></h2>
+            <div class="emz-detail-product-ordernumber">
+                <h2><strong>{s namespace="frontend/detail/index" name="EmzOrdernumberLabel"}Artikel-Nr.: {/s}</strong>
+                <span class="emz-ordernumber">{$sArticle.ordernumber}</span></h2>
             </div>
 
             <div class="emz-detail-product-note-action">
