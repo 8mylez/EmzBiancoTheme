@@ -10,8 +10,12 @@
     <compatibility minVersion="5.2.0" />
 
     <changelog version="1.0.3">
-        <changes lang="de">- Fokus beim öffnen der Suche</changes>
-        <changes lang="en">- add focus  on search open</changes>
+        <changes lang="de">- Fokus beim öffnen der Suche
+        - Artikelslider Hintergrund angepasst
+        - Badges in den EKW Boxen angepasst</changes>
+        <changes lang="en">- add focus  on search open
+        - change article slider background
+        - adjust badge in emotion boxes</changes>
     </changelog>
 
     <changelog version="1.0.2">
