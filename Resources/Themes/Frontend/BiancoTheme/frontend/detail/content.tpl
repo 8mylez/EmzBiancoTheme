@@ -165,7 +165,7 @@
             <div class="emz-product--details-description-content-wrapper">
                 <div class="emz-product--details-description">
                     <div class="emz-product--details-description-title">
-                        {s namespace="frontend/detail/index" name="EmzDescriptionHeadline"}Beschreibung{/s}
+                        {s namespace="frontend/detail/index" name="EmzDescriptionHeadline"}Details{/s}
                     </div>
                     <div class="emz-product--details-description-content emz-product--details-description-slide">
                         {$sArticle.description_long}
