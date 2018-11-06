@@ -4,18 +4,24 @@
     <label lang="de">Bianco Theme</label>
     <label lang="en">Bianco Theme</label>
 
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <link>http://8mylez.com</link>
     <author>8mylez</author>
     <compatibility minVersion="5.2.0" />
 
-    <changelog version="1.0.0">
-        <changes lang="de">Veröffentlichung</changes>
-        <changes lang="en">Release</changes>
+    <changelog version="1.0.2">
+        <changes lang="de">Home Button entfernen</changes>
+        <changes lang="en">remove home button</changes>
     </changelog>
 
     <changelog version="1.0.1">
         <changes lang="de">Bug im Filter der Suche behoben</changes>
         <changes lang="en">fix search filter bug</changes>
     </changelog>
+    
+    <changelog version="1.0.0">
+        <changes lang="de">Veröffentlichung</changes>
+        <changes lang="en">Release</changes>
+    </changelog>
+
 </plugin>
