@@ -1,12 +1,12 @@
 {extends file="parent:frontend/detail/content.tpl"}
 
 {block name="frontend_index_content_inner"}
-    <div class="content emz-product--details" 
-        itemscope 
-        itemtype="http://schema.org/Product" 
-        data-ajax-wishlist="true" 
+    <div class="content emz-product--details"
+        itemscope
+        itemtype="http://schema.org/Product"
+        data-ajax-wishlist="true"
         data-compare-ajax="true"
-        {if $theme.ajaxVariantSwitch} data-ajax-variants-container="true"{/if} 
+        {if $theme.ajaxVariantSwitch} data-ajax-variants-container="true"{/if}
         data-orderNumberSelector=".emz-detail-product-style .emz-ordernumber"
         data-productDetailsSelector=".emz-product--details"
     >
@@ -47,14 +47,14 @@
                     <meta itemprop="releaseDate" content="{$sArticle.sReleasedate}"/>
                 {/if}
             {/block}
-            
+
             <div class="emz-detail-product-details-name">
                 <h1>{$sArticle.articleName}</h1>
             </div>
-            
-            <div class="emz-detail-product-style">
-                <h2><strong>{s namespace="frontend/detail/index" name="EmzStyleAttributeLabel"}Style: {/s}</strong>
-                {$sArticle.attr1} - <span class="emz-ordernumber">{$sArticle.ordernumber}</span></h2>
+
+            <div class="emz-detail-product-ordernumber">
+                <h2><strong>{s namespace="frontend/detail/index" name="EmzOrdernumberLabel"}Artikel-Nr.: {/s}</strong>
+                <span class="emz-ordernumber">{$sArticle.ordernumber}</span></h2>
             </div>
 
             <div class="emz-detail-product-note-action">
@@ -87,16 +87,18 @@
                     {/if}
                 {/foreach}
             {/if}
-            
+
             <div class="emz-detail-product-description-link">
                 <strong>{s namespace="frontend/detail/index" name="EmzDescriptionLink"}
                     <i class="fa fa-angle-right"></i> Beschreibung / Material und Pflege
                 {/s}</strong>
             </div>
-
             <div class="emz-detail-product-price-info">
-                <div class="emz-detail-product-info">
-                    {s namespace="frontend/detail/data" name="DetailDataPriceInfo"}{/s}
+                <div class="emz-detail-product-info" data-modalbox="true" data-targetselector="a" data-mode="ajax">
+                    {s namespace="frontend/detail/data" name="DetailDataPriceInfoTax"}Preis {if $sOutputNet}zzgl.{else}inkl.{/if} MwSt.{/s}
+                    {if !$sArticle.esd && !$sArticle.shippingfree}
+                        {s namespace="frontend/detail/data" name="DetailDataPriceInfoDelivery"} <a title="Versandkosten" href="{url controller=custom sCustom=6}" style="text-decoration:underline">zzgl. Versandkosten</a>{/s}
+                    {/if}
                 </div>
                 <div class="emz-detail-product-price">
                     {if $sArticle.has_pseudoprice}
@@ -116,44 +118,6 @@
                 {include file="frontend/plugins/index/delivery_informations.tpl" sArticle=$sArticle}
             </div>
         </div>
-        <div class="emz-detail-product-details-info" data-emz-detail-read-more="true">
-            <div class="emz-detail-product-details-info-left emz-detail-product-details-info-box">
-                <div class="emz-detail-product-details-info-header">
-                    {s namespace="frontend/detail/index" name="EmzDetailsAttributeLabel"}Details{/s}
-                </div>
-                <div class="emz-detail-product-details-info-content">
-                    {if $sArticle.sProperties}
-                        <ul>
-                            {foreach $sArticle.sProperties as $property}
-                                {if $property.attributes.core && $property.attributes.core->get('emz_full_hide_details')}
-
-                                {else}
-                                    <li>
-                                        {if $property.attributes.core && $property.attributes.core->get('emz_show_frontend')}{$property.name}:{/if}
-                                        {foreach $property.values as $value}
-                                            {$value}{if !$value@last},{/if}
-                                        {/foreach}
-                                    </li>
-                                {/if}
-                            {/foreach}
-                        </ul>
-                    {/if}
-                </div>
-            </div>
-            <div class="emz-detail-product-details-info-right emz-detail-product-details-info-box">
-                <div class="emz-detail-product-details-info-header">
-                    {s namespace="frontend/detail/index" name="EmzSizeAttributeLabel"}Grösse und Passform{/s}
-                </div>
-                <div class="emz-detail-product-details-info-content">
-                    {$sArticle.attr2}
-                </div>
-            </div>
-            <div class="emz-detail-product-details-info-footer">
-                <div class="emz-detail-product-details-info-more">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="emz-product--details-description-headline-wrapper">
         <div class="emz-product--details-description-headline">
@@ -165,33 +129,10 @@
             <div class="emz-product--details-description-content-wrapper">
                 <div class="emz-product--details-description">
                     <div class="emz-product--details-description-title">
-                        {s namespace="frontend/detail/index" name="EmzDescriptionHeadline"}Beschreibung{/s}
+                        {s namespace="frontend/detail/index" name="EmzDescriptionHeadline"}Details{/s}
                     </div>
                     <div class="emz-product--details-description-content emz-product--details-description-slide">
                         {$sArticle.description_long}
-                    </div>
-                </div>
-                <div class="emz-product--details-description">
-                    <div class="emz-product--details-description-title">
-                        {s namespace="frontend/detail/index" name="EmzDescriptionAdditionalHeadline"}Material und Pflege{/s}
-                    </div>
-                    <div class="emz-product--details-description-content-additional emz-product--details-description-slide">
-                        {$sArticle.attr3}
-                        <div class="emz-product--details-description-content-additional-icons">
-                            {if $sArticle.sProperties}
-                                <ul>
-                                    {foreach $sArticle.sProperties as $property}
-                                        {if $property.attributes.core && $property.attributes.core->get('emz_full_hide_details')}
-                                            {foreach $property.options as $option}
-                                                <li>
-                                                    {if $option.attributes.core && $option.attributes.core->get('emz_wash_icon')}<div class="icon icon---{$option.attributes.core->get('emz_wash_icon')}"></div>{/if}<div class="icon-label">{$option.name}</div>
-                                                </li>
-                                            {/foreach}
-                                        {/if}
-                                    {/foreach}
-                                </ul>
-                            {/if}
-                        </div>
                     </div>
                 </div>
             </div>
@@ -202,20 +143,22 @@
                     <img srcset="{$articleImage.thumbnails[4].sourceSet}"
                         alt="{$articleImage.description}"
                         title="{$articleImage.description|truncate:160}" />
-                        <!--477x723 thumbnail size-->        
+                        <!--477x723 thumbnail size-->
                 {/if}
             {/foreach}
         </div>
     </div>
-    <div class="emz-product--details-description-headline-wrapper">
-        <div class="emz-product--details-description-headline">
-            {s namespace="frontend/detail/index" name="EmzRecommendationHeadline"}8mylez Empfiehlt{/s}
+    {if $sArticle.sSimilarArticles || $sArticle.sRelatedArticles}
+        <div class="emz-product--details-recommendation-wrapper">
+            <div class="emz-product--details-description-headline-wrapper">
+                <div class="emz-product--details-description-headline">
+                    {s namespace="frontend/detail/index" name="EmzRecommendationHeadline"}8mylez Empfiehlt{/s}
+                </div>
+            </div>
+            <div class="tab-menu--cross-selling"{if $sArticle.relatedProductStreams} data-scrollable="true"{/if}>
+                {include file="frontend/detail/content/tab_navigation.tpl"}
+                {include file="frontend/detail/content/tab_container.tpl"}
+            </div>
         </div>
-    </div>
-    <div class="emz-product--details-recommendation-wrapper">
-        <div class="tab-menu--cross-selling"{if $sArticle.relatedProductStreams} data-scrollable="true"{/if}>
-            {include file="frontend/detail/content/tab_navigation.tpl"}
-            {include file="frontend/detail/content/tab_container.tpl"}
-        </div>
-    </div>
+    {/if}
 {/block}

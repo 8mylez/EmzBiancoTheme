@@ -103,6 +103,10 @@ a {
         .content-main {
             margin-top: 0;
         }
+
+        .content-main {    
+            .unitize(margin-top, @emz-navigation-line-height-mobile + 10);
+        }
     }
 
     .content-main {
@@ -113,9 +117,5 @@ a {
         .content-main.emz-sub-navigation-active {
             .unitize(margin-top, @emz-navigation-line-height + 50);
         }
-    }
-
-    .emz-detail-conversion-bar {
-        .unitize(margin-top, @emz-navigation-line-height-mobile + 60);
     }
 }
