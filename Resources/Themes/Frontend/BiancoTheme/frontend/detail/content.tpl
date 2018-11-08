@@ -93,10 +93,12 @@
                     <i class="fa fa-angle-right"></i> Beschreibung / Material und Pflege
                 {/s}</strong>
             </div>
-
             <div class="emz-detail-product-price-info">
-                <div class="emz-detail-product-info">
-                    {s namespace="frontend/detail/data" name="DetailDataPriceInfo"}{/s}
+                <div class="emz-detail-product-info" data-modalbox="true" data-targetselector="a" data-mode="ajax">
+                    {s namespace="frontend/detail/data" name="DetailDataPriceInfoTax"}Preis {if $sOutputNet}zzgl.{else}inkl.{/if} MwSt.{/s}
+                    {if !$sArticle.esd && !$sArticle.shippingfree}
+                        {s namespace="frontend/detail/data" name="DetailDataPriceInfoDelivery"} <a title="Versandkosten" href="{url controller=custom sCustom=6}" style="text-decoration:underline">zzgl. Versandkosten</a>{/s}
+                    {/if}
                 </div>
                 <div class="emz-detail-product-price">
                     {if $sArticle.has_pseudoprice}
