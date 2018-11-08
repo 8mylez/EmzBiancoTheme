@@ -1,12 +1,12 @@
 {extends file="parent:frontend/detail/content.tpl"}
 
 {block name="frontend_index_content_inner"}
-    <div class="content emz-product--details" 
-        itemscope 
-        itemtype="http://schema.org/Product" 
-        data-ajax-wishlist="true" 
+    <div class="content emz-product--details"
+        itemscope
+        itemtype="http://schema.org/Product"
+        data-ajax-wishlist="true"
         data-compare-ajax="true"
-        {if $theme.ajaxVariantSwitch} data-ajax-variants-container="true"{/if} 
+        {if $theme.ajaxVariantSwitch} data-ajax-variants-container="true"{/if}
         data-orderNumberSelector=".emz-detail-product-style .emz-ordernumber"
         data-productDetailsSelector=".emz-product--details"
     >
@@ -47,14 +47,14 @@
                     <meta itemprop="releaseDate" content="{$sArticle.sReleasedate}"/>
                 {/if}
             {/block}
-            
+
             <div class="emz-detail-product-details-name">
                 <h1>{$sArticle.articleName}</h1>
             </div>
-            
-            <div class="emz-detail-product-style">
-                <h2><strong>{s namespace="frontend/detail/index" name="EmzStyleAttributeLabel"}Style: {/s}</strong>
-                {$sArticle.attr1} - <span class="emz-ordernumber">{$sArticle.ordernumber}</span></h2>
+
+            <div class="emz-detail-product-ordernumber">
+                <h2><strong>{s namespace="frontend/detail/index" name="EmzOrdernumberLabel"}Artikel-Nr.: {/s}</strong>
+                <span class="emz-ordernumber">{$sArticle.ordernumber}</span></h2>
             </div>
 
             <div class="emz-detail-product-note-action">
@@ -87,7 +87,7 @@
                     {/if}
                 {/foreach}
             {/if}
-            
+
             <div class="emz-detail-product-description-link">
                 <strong>{s namespace="frontend/detail/index" name="EmzDescriptionLink"}
                     <i class="fa fa-angle-right"></i> Beschreibung / Material und Pflege
@@ -129,7 +129,7 @@
             <div class="emz-product--details-description-content-wrapper">
                 <div class="emz-product--details-description">
                     <div class="emz-product--details-description-title">
-                        {s namespace="frontend/detail/index" name="EmzDescriptionHeadline"}Beschreibung{/s}
+                        {s namespace="frontend/detail/index" name="EmzDescriptionHeadline"}Details{/s}
                     </div>
                     <div class="emz-product--details-description-content emz-product--details-description-slide">
                         {$sArticle.description_long}
@@ -143,20 +143,22 @@
                     <img srcset="{$articleImage.thumbnails[4].sourceSet}"
                         alt="{$articleImage.description}"
                         title="{$articleImage.description|truncate:160}" />
-                        <!--477x723 thumbnail size-->        
+                        <!--477x723 thumbnail size-->
                 {/if}
             {/foreach}
         </div>
     </div>
-    <div class="emz-product--details-description-headline-wrapper">
-        <div class="emz-product--details-description-headline">
-            {s namespace="frontend/detail/index" name="EmzRecommendationHeadline"}8mylez Empfiehlt{/s}
+    {if $sArticle.sSimilarArticles || $sArticle.sRelatedArticles}
+        <div class="emz-product--details-recommendation-wrapper">
+            <div class="emz-product--details-description-headline-wrapper">
+                <div class="emz-product--details-description-headline">
+                    {s namespace="frontend/detail/index" name="EmzRecommendationHeadline"}8mylez Empfiehlt{/s}
+                </div>
+            </div>
+            <div class="tab-menu--cross-selling"{if $sArticle.relatedProductStreams} data-scrollable="true"{/if}>
+                {include file="frontend/detail/content/tab_navigation.tpl"}
+                {include file="frontend/detail/content/tab_container.tpl"}
+            </div>
         </div>
-    </div>
-    <div class="emz-product--details-recommendation-wrapper">
-        <div class="tab-menu--cross-selling"{if $sArticle.relatedProductStreams} data-scrollable="true"{/if}>
-            {include file="frontend/detail/content/tab_navigation.tpl"}
-            {include file="frontend/detail/content/tab_container.tpl"}
-        </div>
-    </div>
+    {/if}
 {/block}
