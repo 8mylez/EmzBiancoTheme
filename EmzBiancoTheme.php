@@ -84,6 +84,8 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
 
         $em->remove($component);
         $em->flush();
+
+        $this->uninstallShopPageGroups();
     }
 
     /**
