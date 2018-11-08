@@ -116,44 +116,6 @@
                 {include file="frontend/plugins/index/delivery_informations.tpl" sArticle=$sArticle}
             </div>
         </div>
-        <div class="emz-detail-product-details-info" data-emz-detail-read-more="true">
-            <div class="emz-detail-product-details-info-left emz-detail-product-details-info-box">
-                <div class="emz-detail-product-details-info-header">
-                    {s namespace="frontend/detail/index" name="EmzDetailsAttributeLabel"}Details{/s}
-                </div>
-                <div class="emz-detail-product-details-info-content">
-                    {if $sArticle.sProperties}
-                        <ul>
-                            {foreach $sArticle.sProperties as $property}
-                                {if $property.attributes.core && $property.attributes.core->get('emz_full_hide_details')}
-
-                                {else}
-                                    <li>
-                                        {if $property.attributes.core && $property.attributes.core->get('emz_show_frontend')}{$property.name}:{/if}
-                                        {foreach $property.values as $value}
-                                            {$value}{if !$value@last},{/if}
-                                        {/foreach}
-                                    </li>
-                                {/if}
-                            {/foreach}
-                        </ul>
-                    {/if}
-                </div>
-            </div>
-            <div class="emz-detail-product-details-info-right emz-detail-product-details-info-box">
-                <div class="emz-detail-product-details-info-header">
-                    {s namespace="frontend/detail/index" name="EmzSizeAttributeLabel"}Grösse und Passform{/s}
-                </div>
-                <div class="emz-detail-product-details-info-content">
-                    {$sArticle.attr2}
-                </div>
-            </div>
-            <div class="emz-detail-product-details-info-footer">
-                <div class="emz-detail-product-details-info-more">
-                    <i class="fa fa-angle-down" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="emz-product--details-description-headline-wrapper">
         <div class="emz-product--details-description-headline">
