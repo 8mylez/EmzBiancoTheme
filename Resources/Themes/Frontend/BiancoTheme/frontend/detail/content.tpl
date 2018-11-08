@@ -135,29 +135,6 @@
                         {$sArticle.description_long}
                     </div>
                 </div>
-                <div class="emz-product--details-description">
-                    <div class="emz-product--details-description-title">
-                        {s namespace="frontend/detail/index" name="EmzDescriptionAdditionalHeadline"}Material und Pflege{/s}
-                    </div>
-                    <div class="emz-product--details-description-content-additional emz-product--details-description-slide">
-                        {$sArticle.attr3}
-                        <div class="emz-product--details-description-content-additional-icons">
-                            {if $sArticle.sProperties}
-                                <ul>
-                                    {foreach $sArticle.sProperties as $property}
-                                        {if $property.attributes.core && $property.attributes.core->get('emz_full_hide_details')}
-                                            {foreach $property.options as $option}
-                                                <li>
-                                                    {if $option.attributes.core && $option.attributes.core->get('emz_wash_icon')}<div class="icon icon---{$option.attributes.core->get('emz_wash_icon')}"></div>{/if}<div class="icon-label">{$option.name}</div>
-                                                </li>
-                                            {/foreach}
-                                        {/if}
-                                    {/foreach}
-                                </ul>
-                            {/if}
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="emz-product--details-description-box emz-product--details-description-box-right">
