@@ -67,7 +67,7 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
         $em->persist($component);
         $em->flush();
 
-        $this->installShopPages();
+        $this->installShopPageGroups();
     }
 
     public function uninstall(UninstallContext $context)
@@ -113,5 +113,105 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
         $component->setPlugin($pluginModel);
 
         return $component;
+    }
+
+    /**
+     * Installs all needed shop page groups, that are needed in the theme
+     *
+     * @return bool
+     */
+    public function installShopPageGroups()
+    {
+        $manager = Shopware()->Models();
+        $shopPageGroups = $this->getShopPageGroupNames();
+
+        foreach ($shopPageGroups as $shopPageGroupKey => $shopPageGroupName) {
+            if ($this->checkShopPageGroupName($shopPageGroupKey) && $this->checkShopPageGroupKey($shopPageGroupName)) {
+                $model = new \Shopware\Models\Site\Group();
+                $model->setKey($shopPageGroupKey);
+                $model->setName($shopPageGroupName);
+    
+                $manager->persist($model);
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Uninstalls all shop page groups that were needed in the theme
+     *
+     * @return bool
+     */
+    public function uninstallShopPageGroups()
+    {
+        $manager = Shopware()->Models();
+        $repository = $manager->getRepository('Shopware\Models\Site\Group');
+        $shopPageGroups = $this->getShopPageGroupNames();
+
+        foreach ($shopPageGroups as $shopPageGroupKey => $shopPageGroupName) {
+            $model = $repository->findOneBy(['key' => $shopPageGroupKey]);
+            if ($model !== null) {
+                $manager->remove($model);
+                $manager->flush();
+            }
+        }
+
+        return true;
+    }
+
+    /**
+     * Returns an array with the names and keys of the used shop pages groups in the theme.
+     * It can be easily extended for future updates
+     *
+     * @return array
+     */
+    public function getShopPageGroupNames()
+    {
+        return array(
+            'emzFooterFifthColumn' => 'emzFooterFifthColumn',
+            'emzFooterFourthColumn' => 'emzFooterFourthColumn',
+            'emzFooterNavigation' => 'emzFooterNavigation'
+        );
+    }
+
+    /**
+     * Checks if the group name already exits
+     *
+     * @param string $name
+     * @return bool
+     */
+    public function checkShopPageGroupName($name)
+    {
+        $manager = Shopware()->Models();
+        $repository = $manager->getRepository('Shopware\Models\Site\Group');
+
+        // Check if name exists
+        $model = $repository->findOneBy(['name' => $name]);
+        if ($model !== null) {
+            return false;
+        }
+
+        return true;
+    }
+
+    /**
+     * Checks if the group key already exits
+     *
+     * @param string $key
+     * @return bool
+     */
+    public function checkShopPageGroupKey($key)
+    {
+        $manager = Shopware()->Models();
+        $repository = $manager->getRepository('Shopware\Models\Site\Group');
+
+        // Check if key exists
+        $model = $repository->findOneBy(['key' => $key]);
+        if ($model !== null) {
+            return false;
+        }
+
+        return true;
     }
 }
