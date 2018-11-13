@@ -126,9 +126,9 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
     {
         $manager = Shopware()->Models();
         $shopPageGroups = $this->getShopPageGroupNames();
-
+        
         foreach ($shopPageGroups as $shopPageGroupKey => $shopPageGroupName) {
-            if ($this->checkShopPageGroupName($shopPageGroupKey) && $this->checkShopPageGroupKey($shopPageGroupName)) {
+            if ($this->checkShopPageGroupKey($shopPageGroupKey)) {
                 $model = new \Shopware\Models\Site\Group();
                 $model->setKey($shopPageGroupKey);
                 $model->setName($shopPageGroupName);
@@ -175,26 +175,6 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
             'emzFooterFourthColumn' => 'emzFooterFourthColumn',
             'emzFooterNavigation' => 'emzFooterNavigation'
         );
-    }
-
-    /**
-     * Checks if the group name already exits
-     *
-     * @param string $name
-     * @return bool
-     */
-    public function checkShopPageGroupName($name)
-    {
-        $manager = Shopware()->Models();
-        $repository = $manager->getRepository('Shopware\Models\Site\Group');
-
-        // Check if name exists
-        $model = $repository->findOneBy(['name' => $name]);
-        if ($model !== null) {
-            return false;
-        }
-
-        return true;
     }
 
     /**
