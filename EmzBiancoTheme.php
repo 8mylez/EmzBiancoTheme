@@ -3,6 +3,7 @@
 namespace EmzBiancoTheme;
 
 use Shopware\Components\Plugin\Context\InstallContext;
+use Shopware\Components\Plugin\Context\UninstallContext;
 use Shopware\Models\Plugin\Plugin;
 
 class EmzBiancoTheme extends \Shopware\Components\Plugin
@@ -134,6 +135,13 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
             'fieldLabel' => 'Hintergrundfarbe',
             'allowBlank' => true
         ]);
+
+        $this->installShopPageGroups();
+    }
+
+    public function uninstall(UninstallContext $context)
+    {
+        $this->uninstallShopPageGroups();
     }
 
     /**
@@ -145,16 +153,15 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
     {
         $manager = Shopware()->Models();
         $shopPageGroups = $this->getShopPageGroupNames();
-        
+
         foreach ($shopPageGroups as $shopPageGroupKey => $shopPageGroupName) {
             if ($this->checkShopPageGroupKey($shopPageGroupKey)) {
                 $model = new \Shopware\Models\Site\Group();
                 $model->setKey($shopPageGroupKey);
                 $model->setName($shopPageGroupName);
-    
+
                 $manager->persist($model);
             }
-
         }
         return true;
     }
@@ -190,9 +197,9 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
     public function getShopPageGroupNames()
     {
         return array(
-            'emzFooterFifthColumn' => 'emzFooterFifthColumn',
-            'emzFooterFourthColumn' => 'emzFooterFourthColumn',
-            'emzFooterNavigation' => 'emzFooterNavigation'
+            'emzFooterFifthColumn' => 'EmzBiancoTheme Footer Spalte 5',
+            'emzFooterFourthColumn' => 'EmzBiancoTheme Footer Spalte 4',
+            'emzFooterNavigation' => 'EmzBiancoTheme Footer Navigation'
         );
     }
 
