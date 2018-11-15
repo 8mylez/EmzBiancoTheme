@@ -1,0 +1,81 @@
+.buybox--button{
+    overflow: hidden;
+    position: relative;
+
+    &:before{
+        display: inline-block;
+        position: absolute;
+        content:'';
+        height: 100%;
+        width: 100%;
+        background-color: #1ace04;
+        background-image: linear-gradient(to bottom, #1ace04 0%, #14a203 100%);
+        opacity: 0;
+        left: 0;
+        top: 0;
+    }
+
+    &.success{
+        &:before{
+            animation-name: emz-fade;
+            animation-duration: 0.5s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+        }
+
+        .add-article{
+            animation-name: emz-woosh-out;
+            animation-duration: 0.5s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+        }
+
+        .add-success-message{
+            animation-name: emz-woosh-in;
+            animation-duration: 0.5s;
+            animation-iteration-count: 2;
+            animation-direction: alternate;
+            animation-timing-function: cubic-bezier(0.18, 0.89, 0.16, 1);
+        }
+    }
+
+    .add-article{
+        position: relative;
+    }
+
+    .add-success-message{
+        position: relative;
+    }
+}
+
+// animations
+@keyframes emz-woosh-in {
+    from {
+        transform: translateY(0px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-39px);
+        opacity: 1;
+    }
+}
+
+@keyframes emz-woosh-out {
+    from {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-39px);
+        opacity: 0;
+    }
+}
+
+@keyframes emz-fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

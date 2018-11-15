@@ -34,7 +34,8 @@ SHOPWARE_EOD;
         'src/js/jquery.override.emz-subcategory-nav.js',
         'src/js/jquery.emz-detail-read-more.js',
         'src/js/jquery.emz-bianco-theme.js',
-        'src/js/jquery.search.js'
+        'src/js/jquery.search.js',
+        'src/js/jquery.emzFancyShoppingCart.js'
     ];
 
     /**
@@ -117,6 +118,7 @@ SHOPWARE_EOD;
         $tabPanel->addTab($this->createFooterTab());
         $tabPanel->addTab($this->createHeaderTab());
         $tabPanel->addTab($this->createButtonsTab());
+        $tabPanel->addTab($this->createPluginsTab());
 
         return $tabPanel;
     }
@@ -445,9 +447,47 @@ SHOPWARE_EOD;
             )
         );
 
-
         $tab->addElement($fieldSet1);
 
         return $tab;
     }
+
+    /**
+     * Helper function to create the tab ("Plugins").
+     *
+     * @return Form\Container\Tab
+     */
+     private function createPluginsTab()
+     {
+         $tab = $this->createTab(
+             'plugins_tab',
+             '__plugins_tab__',
+             [
+                 'attributes' => [
+                     'autoScroll' => true,
+                 ],
+             ]
+         );
+
+         $attributes = array_merge($this->fieldSetDefaults, ['height' => 120]);
+
+         $fieldSet1 = $this->createFieldSet(
+             'emzFancyShoppingCart_set',
+             '__fancyShoppingCart_tab_column__',
+             ['attributes' => $attributes]
+         );
+
+         $fieldSet1->addElement(
+             $this->createTextField(
+                 'emzFancyShoppingCartText',
+                 '__fancyShoppingCartText__',
+                 'Hinzugefügt',
+                 ['attributes' => ['lessCompatible' => false]]
+             )
+         );
+
+         $tab->addElement($fieldSet1);
+
+         return $tab;
+     }
 }
