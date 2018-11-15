@@ -164,14 +164,6 @@ SHOPWARE_EOD;
 
         $column1FieldSet->addElement(
             $this->createTextField(
-                'emzFooterColumn1Sitegroup',
-                '__footer_column_sitegroup__',
-                'Shopseiten Gruppe'
-            )
-        );
-
-        $column1FieldSet->addElement(
-            $this->createTextField(
                 'emzFooterColumn1Image',
                 '__footer_column_image__',
                 'Bild'
@@ -212,25 +204,9 @@ SHOPWARE_EOD;
 
         $column2FieldSet->addElement(
             $this->createTextField(
-                'emzFooterColumn2Description',
-                '__footer_column_description__',
-                'Beschreibung 2'
-            )
-        );
-
-        $column2FieldSet->addElement(
-            $this->createTextField(
                 'emzFooterColumn2Sitegroup',
                 '__footer_column_sitegroup__',
                 'emzFooterSecondColumn'
-            )
-        );
-
-        $column2FieldSet->addElement(
-            $this->createTextField(
-                'emzFooterColumn2Image',
-                '__footer_column_image__',
-                'Bild'
             )
         );
 
@@ -268,25 +244,9 @@ SHOPWARE_EOD;
 
         $column3FieldSet->addElement(
             $this->createTextField(
-                'emzFooterColumn3Description',
-                '__footer_column_description__',
-                'Beschreibung 3'
-            )
-        );
-
-        $column3FieldSet->addElement(
-            $this->createTextField(
                 'emzFooterColumn3Sitegroup',
                 '__footer_column_sitegroup__',
                 'emzFooterThirdColumn'
-            )
-        );
-
-        $column3FieldSet->addElement(
-            $this->createTextField(
-                'emzFooterColumn3Image',
-                '__footer_column_image__',
-                'Bild'
             )
         );
 
@@ -324,25 +284,9 @@ SHOPWARE_EOD;
 
         $column4FieldSet->addElement(
             $this->createTextField(
-                'emzFooterColumn4Description',
-                '__footer_column_description__',
-                'Beschreibung 4'
-            )
-        );
-
-        $column4FieldSet->addElement(
-            $this->createTextField(
                 'emzFooterColumn4Sitegroup',
                 '__footer_column_sitegroup__',
                 'emzFooterFourthColumn'
-            )
-        );
-
-        $column4FieldSet->addElement(
-            $this->createTextField(
-                'emzFooterColumn4Image',
-                '__footer_column_image__',
-                'Bild'
             )
         );
 
