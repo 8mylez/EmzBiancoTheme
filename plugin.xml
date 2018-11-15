@@ -4,10 +4,15 @@
     <label lang="de">Bianco Theme</label>
     <label lang="en">Bianco Theme</label>
 
-    <version>1.0.4</version>
+    <version>1.0.5</version>
     <link>http://8mylez.com</link>
     <author>8mylez</author>
     <compatibility minVersion="5.2.0" />
+
+    <changelog version="1.0.5">
+        <changes lang="de">Social media fix</changes>
+        <changes lang="en">Social media fix</changes>
+    </changelog>
 
     <changelog version="1.0.4">
         <changes lang="de">Theme Konfiguration angepasst</changes>

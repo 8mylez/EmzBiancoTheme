@@ -395,7 +395,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzSocialMediaFacebookLink',
                 '__social_facebook_link__',
-                ''
+                '',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 
@@ -403,7 +404,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzSocialMediaInstagramLink',
                 '__social_instagram_link__',
-                ''
+                '',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 
@@ -411,7 +413,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzSocialMediaTwitterLink',
                 '__social_twitter_link__',
-                ''
+                '',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 
@@ -419,7 +422,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzSocialMediaPinterestLink',
                 '__social_pinterest_link__',
-                ''
+                '',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 
@@ -427,7 +431,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzSocialMediaYoutubeLink',
                 '__social_youtube_link__',
-                ''
+                '',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 
@@ -435,7 +440,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzSocialMediaGooglePlusLink',
                 '__social_googleplus_link__',
-                ''
+                '',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 

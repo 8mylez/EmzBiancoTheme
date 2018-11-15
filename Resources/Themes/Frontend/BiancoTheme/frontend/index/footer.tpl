@@ -6,42 +6,42 @@
     <div class='emz-footer-social-media'>
       {if $theme.emzSocialMediaInstagramLink}
         <div class='emz-footer-social-media-icon'>
-          <a href={$theme.emzSocialMediaInstagramLink} target='_blank'>
+          <a href="{$theme.emzSocialMediaInstagramLink}" target='_blank'>
             <i class="fa fa-instagram" aria-hidden="true"></i>
           </a>
         </div>
       {/if}
       {if $theme.emzSocialMediaFacebookLink}
         <div class='emz-footer-social-media-icon'>
-          <a href={$theme.emzSocialMediaFacebookLink} target='_blank'>
+          <a href="{$theme.emzSocialMediaFacebookLink}" target='_blank'>
             <i class="fa fa-facebook-official" aria-hidden="true"></i>
           </a>
         </div>
       {/if}
       {if $theme.emzSocialMediaTwitterLink}
         <div class='emz-footer-social-media-icon'>
-          <a href={$theme.emzSocialMediaTwitterLink} target='_blank'>
+          <a href="{$theme.emzSocialMediaTwitterLink}" target='_blank'>
             <i class="fa fa-twitter-square" aria-hidden="true"></i>
           </a>
         </div>
       {/if}
       {if $theme.emzSocialMediaPinterestLink}
         <div class='emz-footer-social-media-icon'>
-          <a href={$theme.emzSocialMediaPinterestLink} target='_blank'>
+          <a href="{$theme.emzSocialMediaPinterestLink}" target='_blank'>
             <i class="fa fa-pinterest-square" aria-hidden="true"></i>
           </a>
         </div>
       {/if}
       {if $theme.emzSocialMediaYoutubeLink}
         <div class='emz-footer-social-media-icon'>
-          <a href={$theme.emzSocialMediaYoutubeLink} target='_blank'>
+          <a href="{$theme.emzSocialMediaYoutubeLink}" target='_blank'>
             <i class="fa fa-youtube-square" aria-hidden="true"></i>
           </a>
         </div>
       {/if}
       {if $theme.emzSocialMediaGooglePlusLink}
         <div class='emz-footer-social-media-icon'>
-          <a href={$theme.emzSocialMediaGooglePlusLink} target='_blank'>
+          <a href="{$theme.emzSocialMediaGooglePlusLink}" target='_blank'>
             <i class="fa fa-google-plus-square" aria-hidden="true"></i>
           </a>
         </div>
