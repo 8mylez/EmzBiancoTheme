@@ -117,9 +117,6 @@ SHOPWARE_EOD;
         $tabPanel->addTab($this->createFooterTab());
         $tabPanel->addTab($this->createHeaderTab());
         $tabPanel->addTab($this->createButtonsTab());
-        // $tabPanel->addTab($this->createButtonsTab());
-        // $tabPanel->addTab($this->createFormsTab());
-        // $tabPanel->addTab($this->createTablesTab());
 
         return $tabPanel;
     }
@@ -144,14 +141,14 @@ SHOPWARE_EOD;
         $attributes = array_merge($this->fieldSetDefaults, ['height' => 150]);
 
         $column1FieldSet = $this->createFieldSet(
-            'emz-footer-column1-field_set',
+            'emzFooterColumn1Field_set',
             '__footer_tab_column1__',
             ['attributes' => $attributes]
         );
 
         $column1FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column1-headline',
+                'emzFooterColumn1Headline',
                 '__footer_column_headline__',
                 'Spalte 1'
             )
@@ -159,23 +156,15 @@ SHOPWARE_EOD;
 
         $column1FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column1-description',
+                'emzFooterColumn1Description',
                 '__footer_column_description__',
-                'Spalte 1'
+                'Beschreibung 1'
             )
         );
 
         $column1FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column1-sitegroup',
-                '__footer_column_sitegroup__',
-                'Shopseiten Gruppe'
-            )
-        );
-
-        $column1FieldSet->addElement(
-            $this->createTextField(
-                'emz-footer-column1-image',
+                'emzFooterColumn1Image',
                 '__footer_column_image__',
                 'Bild'
             )
@@ -183,7 +172,7 @@ SHOPWARE_EOD;
 
         $column1FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column1-link',
+                'emzFooterColumn1Link',
                 '__footer_column_link__',
                 'Link'
             )
@@ -191,7 +180,7 @@ SHOPWARE_EOD;
 
         $column1FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column1-linktext',
+                'emzFooterColumn1Linktext',
                 '__footer_column_linktext__',
                 'Linktext'
             )
@@ -200,14 +189,14 @@ SHOPWARE_EOD;
         $tab->addElement($column1FieldSet);
 
         $column2FieldSet = $this->createFieldSet(
-            'emz-footer-column2-field_set',
+            'emzFooterColumn2Field_set',
             '__footer_tab_column2__',
             ['attributes' => $attributes]
         );
 
         $column2FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column2-headline',
+                'emzFooterColumn2Headline',
                 '__footer_column_headline__',
                 'Spalte 2'
             )
@@ -215,31 +204,15 @@ SHOPWARE_EOD;
 
         $column2FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column2-description',
-                '__footer_column_description__',
-                'Spalte 2'
-            )
-        );
-
-        $column2FieldSet->addElement(
-            $this->createTextField(
-                'emz-footer-column2-sitegroup',
+                'emzFooterColumn2Sitegroup',
                 '__footer_column_sitegroup__',
-                'Shopseiten Gruppe'
+                'emzFooterSecondColumn'
             )
         );
 
         $column2FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column2-image',
-                '__footer_column_image__',
-                'Bild'
-            )
-        );
-
-        $column2FieldSet->addElement(
-            $this->createTextField(
-                'emz-footer-column2-link',
+                'emzFooterColumn2Link',
                 '__footer_column_link__',
                 'Link'
             )
@@ -247,7 +220,7 @@ SHOPWARE_EOD;
 
         $column2FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column2-linktext',
+                'emzFooterColumn2Linktext',
                 '__footer_column_linktext__',
                 'Linktext'
             )
@@ -256,14 +229,14 @@ SHOPWARE_EOD;
         $tab->addElement($column2FieldSet);
 
         $column3FieldSet = $this->createFieldSet(
-            'emz-footer-column3-field_set',
+            'emzFooterColumn3Field_set',
             '__footer_tab_column3__',
             ['attributes' => $attributes]
         );
 
         $column3FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column3-headline',
+                'emzFooterColumn3Headline',
                 '__footer_column_headline__',
                 'Spalte 3'
             )
@@ -271,31 +244,15 @@ SHOPWARE_EOD;
 
         $column3FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column3-description',
-                '__footer_column_description__',
-                'Spalte 3'
-            )
-        );
-
-        $column3FieldSet->addElement(
-            $this->createTextField(
-                'emz-footer-column3-sitegroup',
+                'emzFooterColumn3Sitegroup',
                 '__footer_column_sitegroup__',
-                'Shopseiten Gruppe'
+                'emzFooterThirdColumn'
             )
         );
 
         $column3FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column3-image',
-                '__footer_column_image__',
-                'Bild'
-            )
-        );
-
-        $column3FieldSet->addElement(
-            $this->createTextField(
-                'emz-footer-column3-link',
+                'emzFooterColumn3Link',
                 '__footer_column_link__',
                 'Link'
             )
@@ -303,7 +260,7 @@ SHOPWARE_EOD;
 
         $column3FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column3-linktext',
+                'emzFooterColumn3Linktext',
                 '__footer_column_linktext__',
                 'Linktext'
             )
@@ -312,14 +269,14 @@ SHOPWARE_EOD;
         $tab->addElement($column3FieldSet);
 
         $column4FieldSet = $this->createFieldSet(
-            'emz-footer-column4-field_set',
+            'emzFooterColumn4Field_set',
             '__footer_tab_column4__',
             ['attributes' => $attributes]
         );
 
         $column4FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column4-headline',
+                'emzFooterColumn4Headline',
                 '__footer_column_headline__',
                 'Spalte 4'
             )
@@ -327,31 +284,15 @@ SHOPWARE_EOD;
 
         $column4FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column4-description',
-                '__footer_column_description__',
-                'Spalte 4'
-            )
-        );
-
-        $column4FieldSet->addElement(
-            $this->createTextField(
-                'emz-footer-column4-sitegroup',
+                'emzFooterColumn4Sitegroup',
                 '__footer_column_sitegroup__',
-                'Shopseiten Gruppe'
+                'emzFooterFourthColumn'
             )
         );
 
         $column4FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column4-image',
-                '__footer_column_image__',
-                'Bild'
-            )
-        );
-
-        $column4FieldSet->addElement(
-            $this->createTextField(
-                'emz-footer-column4-link',
+                'emzFooterColumn4Link',
                 '__footer_column_link__',
                 'Link'
             )
@@ -359,7 +300,7 @@ SHOPWARE_EOD;
 
         $column4FieldSet->addElement(
             $this->createTextField(
-                'emz-footer-column4-linktext',
+                'emzFooterColumn4Linktext',
                 '__footer_column_linktext__',
                 'Linktext'
             )
@@ -387,7 +328,7 @@ SHOPWARE_EOD;
             ]
         );
 
-        $attributes = array_merge($this->fieldSetDefaults, ['height' => 130]);
+        $attributes = array_merge($this->fieldSetDefaults, ['height' => 120]);
 
         $column1FieldSet = $this->createFieldSet(
             'header_column_field_set',
@@ -445,7 +386,7 @@ SHOPWARE_EOD;
         $attributes = array_merge($this->fieldSetDefaults, ['height' => 150]);
 
         $fieldSet1 = $this->createFieldSet(
-            'socialbutton-column1-field_set',
+            'socialbutton-column1Field_set',
             '__socialbuttons_tab_column__',
             ['attributes' => $attributes]
         );

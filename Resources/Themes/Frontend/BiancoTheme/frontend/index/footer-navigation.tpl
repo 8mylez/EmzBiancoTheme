@@ -1,53 +1,27 @@
 <div class="footer--column is--first block">
     <div class="column--headline">
-        {s namespace="frontend/index/menu_footer" name="emzFooterFirstColumnHeadline"}{/s}
+        {$theme.emzFooterColumn1Headline}
     </div>
 
     <div class="column--content">
-        {s namespace="frontend/index/menu_footer" name="emzFooterFirstColumnImage"}{/s}
+        {$theme.emzFooterColumn1Image}
         <p class="column--desc">
-            {s namespace="frontend/index/menu_footer" name="emzFooterFirstColumnDescription"}{/s}
+            {$theme.emzFooterColumn1Description}
         </p>
         <div class='emz-column--link'>
-            {s namespace="frontend/index/menu_footer" name="emzFooterFirstColumnLink"}{/s}
+            <a href="{$theme.emzFooterColumn1Link}" target="_blank">{$theme.emzFooterColumn1Linktext}</a>
         </div>
     </div>
 </div>
 
 <div class="footer--column block">
     <div class="column--headline">
-        {s namespace="frontend/index/menu_footer" name="emzFooterThirdColumnHeadline"}{/s}
-    </div>
-
-    <div class="column--content">
-        <ul>
-            <li>
-                {s namespace="frontend/index/menu_footer" name="emzFooterThirdColumnEntry1"}{/s}
-            </li>
-            <li>
-                {s namespace="frontend/index/menu_footer" name="emzFooterThirdColumnEntry2"}{/s}
-            </li>
-            <li>
-                {s namespace="frontend/index/menu_footer" name="emzFooterThirdColumnEntry3"}{/s}
-            </li>
-            <li>
-                {s namespace="frontend/index/menu_footer" name="emzFooterThirdColumnEntry4"}{/s}
-            </li>
-        </ul>
-        <div class='emz-column--link'>
-            {s namespace="frontend/index/menu_footer" name="emzFooterThirdColumnLink"}{/s}
-        </div>
-    </div>
-</div>
-
-<div class="footer--column column--menu block">
-    <div class="column--headline">
-        {s namespace="frontend/index/menu_footer" name="emzFooterFourthColumnHeadline"}{/s}
+        {$theme.emzFooterColumn2Headline}
     </div>
 
     <nav class="column--navigation column--content">
         <ul class="navigation--list" role="menu">
-            {foreach $sMenu.emzFooterFourthColumn as $item}
+            {foreach $sMenu.{$theme.emzFooterColumn3Sitegroup} as $item}
             <li class="navigation--entry" role="menuitem">
                 <a class="navigation--link" href="{if $item.link}{$item.link}{else}{url controller='custom' sCustom=$item.id title=$item.description}{/if}"
                    title="{$item.description|escape}"{if $item.target} target="{$item.target}"{/if}>
@@ -75,19 +49,59 @@
             {/foreach}
         </ul>
         <div class='emz-column--link'>
-            {s namespace="frontend/index/menu_footer" name="emzFooterFourthColumnLink"}{/s}
+            <a href="{$theme.emzFooterColumn2Link}" target="_blank">{$theme.emzFooterColumn2Linktext}</a>
+        </div>
+    </nav>
+</div>
+
+<div class="footer--column column--menu block">
+    <div class="column--headline">
+        {$theme.emzFooterColumn3Headline}
+    </div>
+
+    <nav class="column--navigation column--content">
+        <ul class="navigation--list" role="menu">
+            {foreach $sMenu.{$theme.emzFooterColumn3Sitegroup} as $item}
+            <li class="navigation--entry" role="menuitem">
+                <a class="navigation--link" href="{if $item.link}{$item.link}{else}{url controller='custom' sCustom=$item.id title=$item.description}{/if}"
+                   title="{$item.description|escape}"{if $item.target} target="{$item.target}"{/if}>
+                    <div class='emz-column--icon'>
+                        <i class="fa fa-check" aria-hidden="true"></i>
+                    </div>
+                    <div class='emz-column--text'>
+                        {$item.description}
+                    </div>
+                </a>
+
+                {* Sub categories *}
+                {if $item.childrenCount > 0}
+                <ul class="navigation--list is--level1" role="menu">
+                    {foreach $item.subPages as $subItem}
+                    <li class="navigation--entry" role="menuitem">
+                        <a class="navigation--link" href="{if $subItem.link}{$subItem.link}{else}{url controller='custom' sCustom=$subItem.id title=$subItem.description}{/if}" title="{$subItem.description|escape}"{if $subItem.target} target="{$subItem.target}"{/if}>
+                            {$subItem.description}
+                        </a>
+                    </li>
+                    {/foreach}
+                </ul>
+                {/if}
+            </li>
+            {/foreach}
+        </ul>
+        <div class='emz-column--link'>
+            <a href="{$theme.emzFooterColumn3Link}" target="_blank">{$theme.emzFooterColumn3Linktext}</a>
         </div>
     </nav>
 </div>
 
 <div class="footer--column column--menu is--last block">
     <div class="column--headline">
-        {s namespace="frontend/index/menu_footer" name="emzFooterFifthColumnHeadline"}{/s}
+        {$theme.emzFooterColumn4Headline}
     </div>
 
     <nav class="column--navigation column--content">
         <ul class="navigation--list" role="menu">
-            {foreach $sMenu.emzFooterFifthColumn as $item}
+            {foreach $sMenu.{$theme.emzFooterColumn4Sitegroup} as $item}
             <li class="navigation--entry" role="menuitem">
                 <a class="navigation--link" href="{if $item.link}{$item.link}{else}{url controller='custom' sCustom=$item.id title=$item.description}{/if}" title="{$item.description|escape}"{if $item.target} target="{$item.target}"{/if}>
                     {$item.description}
@@ -110,7 +124,7 @@
         </ul>
 
         <div class='emz-column--link'>
-            {s namespace="frontend/index/menu_footer" name="emzFooterFifthColumnLink"}{/s}
+            <a href="{$theme.emzFooterColumn4Link}" target="_blank">{$theme.emzFooterColumn4Linktext}</a>
         </div>
     </nav>
 </div>
