@@ -25,12 +25,11 @@
         registerEvents: function () {
             var me = this;
             var $el = me.$el.find('button');
-      
+
             me._on($el, 'click', $.proxy(me.onClick, me, $el));
         },
 
         onClick: function($el){
-            console.log("gotcha");
             $el.addClass('success')
             window.setTimeout(function(){
                 $el.removeClass('success');
