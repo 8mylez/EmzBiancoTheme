@@ -32,6 +32,11 @@
         </changes>
     </changelog>
 
+    <changelog version="1.0.5">
+        <changes lang="de">Einkaufswelten-Elemente für Eleganz- und Classic-Hover-Effekt</changes>
+        <changes lang="en">Add emotion world elements for elegance and classic hover effetcs</changes>
+    </changelog>
+
     <changelog version="1.0.2">
         <changes lang="de">Home Button entfernen</changes>
         <changes lang="en">remove home button</changes>

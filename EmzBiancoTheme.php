@@ -2,115 +2,137 @@
 
 namespace EmzBiancoTheme;
 
-use Shopware\Components\Model\ModelManager;
 use Shopware\Components\Plugin\Context\InstallContext;
-use Shopware\Components\Plugin\Context\UninstallContext;
-use Shopware\Models\Emotion\Library\Component;
 use Shopware\Models\Plugin\Plugin;
 
 class EmzBiancoTheme extends \Shopware\Components\Plugin
 {
+    public function install(InstallContext $context)
+    {
+        $emotionComponentHandler = $this->container->get('shopware.emotion_component_installer');
 
-  public function install(InstallContext $context)
-  {
-    $component = $this->createEmotionComponent($context->getPlugin(), [
-      'name' => 'Zwei Bilder ein Text',
-      'xtype' => 'emotion-components-base',
-      'template' => 'component_two_images_one_text',
-      'cls' => 'two-images-one-text',
-      'description' => 'Zeigt zwei Bilder mit einer Textbox an.',
-    ]);
+        //add elegance hover component
+        $emzEleganceComponent = $emotionComponentHandler->createOrUpdate(
+            $this->getName(),
+            'EmzPremiumHoverElegance',
+            [
+                'name' => '8mylez Premium Hover: Eleganz',
+                'xtype' => 'emotion-components-elegance',
+                'template' => 'emotion_elegance',
+                'cls' => 'emotion-elegance-element',
+                'description' => 'Premium Hover Effekt: Eleganz'
+            ]
+        );
 
-    $component->createTextField([
-      'name' => 'title',
-      'fieldLabel' => 'Titel',
-      'allowBlank' => true
-    ]);
+        $emzEleganceComponent->createTextField([
+            'name' => 'emzphe_text_upper',
+            'fieldLabel' => 'Oberer Text',
+            'defaultValue' => 'Oberer Text',
+            'translatable' => true
+        ]);
 
-    $component->createMediaField([
-        'name' => 'left_image',
-        'fieldLabel' => 'Linkes Bild',
-        'valueField' => 'path'
-    ]);
+        $emzEleganceComponent->createTextField([
+            'name' => 'emzphe_text_lower',
+            'fieldLabel' => 'Unterer Text',
+            'defaultValue' => 'Unterer Text',
+            'translatable' => true
+        ]);
 
-    $component->createMediaField([
-        'name' => 'right_image',
-        'fieldLabel' => 'Rechtes Bild',
-        'valueField' => 'path'
-    ]);
+        $emzEleganceComponent->createMediaField([
+            'name' => 'emzphe_image',
+            'fieldLabel' => 'Hintergrundbild',
+            'allowBlank' => true,
+            'translatable' => true
+        ]);
 
-    $component->createTextField([
-      'name' => 'descriptionTitle',
-      'fieldLabel' => 'Beschreibung Titel',
-      'allowBlank' => true
-    ]);
+        $emzEleganceComponent->createTextField([
+            'name' => 'emzphe_url',
+            'fieldLabel' => 'Url',
+            'allowBlank' => true,
+            'translatable' => true
+        ]);
 
-    $component->createTextAreaField([
-      'name' => 'description',
-      'fieldLabel' => 'Beschreibung',
-      'allowBlank' => true
-    ]);
+        $emzEleganceComponent->createRadioField([
+            'name' => 'emzphe_url_target',
+            'fieldLabel' => 'Url Ziel',
+            'defaultValue' => 'newtab',
+            'supportText' => 'Neuer Tab'
+        ]);
 
-    $component->createTextField([
-      'name' => 'readMoreLink',
-      'fieldLabel' => 'Mehr Lesen Link',
-      'allowBlank' => true
-    ]);
+        $emzEleganceComponent->createRadioField([
+            'name' => 'emzphe_url_target',
+            'defaultValue' => 'intern',
+            'supportText' => 'intern'
+        ]);
 
-    $component->createTextField([
-      'name' => 'goShoppingLink',
-      'fieldLabel' => 'Jetzt Shoppen Link',
-      'allowBlank' => true
-    ]);
+        $emzEleganceComponent->createTextField([
+            'name' => 'emzphe_background_color',
+            'fieldLabel' => 'Hintergrundfarbe',
+            'allowBlank' => true,
+            'translatable' => true
+        ]);
 
-    /** @var ModelManager $em */
-    $em = $this->container->get('models');
-    $em->persist($component);
-    $em->flush();
-  }
+        $emzEleganceComponent->createMediaField([
+            'name' => 'emzphe_hover_image',
+            'fieldLabel' => 'Hover Bild',
+            'allowBlank' => true,
+            'translatable' => true
+        ]);
 
-  public function uninstall(UninstallContext $context)
-  {
-    $em = $this->container->get('models');
-    $component = $em->getRepository(Component::class)->findOneBy([
-        'name' => 'Zwei Bilder ein Text',
-        'pluginId' => $context->getPlugin()->getId()
-    ]);
+        //add classic hover component
+        $emzClassicComponent = $emotionComponentHandler->createOrUpdate(
+            $this->getName(),
+            'EmzPremiumHoverClassic',
+            [
+                'name' => '8mylez Premium Hover: Classic',
+                'xtype' => 'emotion-components-classic',
+                'template' => 'emotion_classic',
+                'cls' => 'emotion-classic-element',
+                'description' => 'Premium Hover Effekt: Classic'
+            ]
+        );
 
-    if(!$component) {
-      return;
+        $emzClassicComponent->createTextField([
+            'name' => 'emzphc_text_upper',
+            'fieldLabel' => 'Oberer Text',
+            'defaultValue' => 'Oberer Text'
+        ]);
+
+        $emzClassicComponent->createTextField([
+            'name' => 'emzphc_text_lower',
+            'fieldLabel' => 'Unterer Text',
+            'defaultValue' => 'Unterer Text'
+        ]);
+
+        $emzClassicComponent->createMediaField([
+            'name' => 'emzphc_image',
+            'fieldLabel' => 'Hintergrundbild',
+            'allowBlank' => true
+        ]);
+
+        $emzClassicComponent->createTextField([
+            'name' => 'emzphc_url',
+            'fieldLabel' => 'Url',
+            'allowBlank' => true
+        ]);
+
+        $emzClassicComponent->createRadioField([
+            'name' => 'emzphc_url_target',
+            'fieldLabel' => 'Url Ziel',
+            'defaultValue' => 'newtab',
+            'supportText' => 'Neuer Tab'
+        ]);
+
+        $emzClassicComponent->createRadioField([
+            'name' => 'emzphc_url_target',
+            'defaultValue' => 'intern',
+            'supportText' => 'intern'
+        ]);
+
+        $emzClassicComponent->createTextField([
+            'name' => 'emzphc_background_color',
+            'fieldLabel' => 'Hintergrundfarbe',
+            'allowBlank' => true
+        ]);
     }
-
-    $em->remove($component);
-    $em->flush();
-  }
-
-  /**
-   * @param $options
-   * @param Plugin $pluginModel
-   * @return Component
-   */
-  protected function createEmotionComponent(Plugin $pluginModel, $options)
-  {
-      /** @var ModelManager $em */
-      $em = $this->container->get('models');
-
-      // if a component with this name already exists for this plugin, use that
-      $component = $em->getRepository(Component::class)->findOneBy([
-          'name' => $options['name'],
-          'pluginId' => $pluginModel->getId()
-      ]);
-
-      // else: create a new component
-      if (!$component) {
-          $component = new Component();
-      }
-
-      $component->fromArray($options);
-
-      $component->setPluginId($pluginModel->getId());
-      $component->setPlugin($pluginModel);
-
-      return $component;
-  }
 }
