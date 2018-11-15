@@ -137,16 +137,13 @@
                 </div>
             </div>
         </div>
-        <div class="emz-product--details-description-box emz-product--details-description-box-right">
-            {foreach $sArticle.images as $articleImage}
-                {if $articleImage.attributes.image && $articleImage.attributes.image->get('emz_detail_description')}
-                    <img srcset="{$articleImage.thumbnails[4].sourceSet}"
-                        alt="{$articleImage.description}"
-                        title="{$articleImage.description|truncate:160}" />
-                        <!--477x723 thumbnail size-->
-                {/if}
-            {/foreach}
-        </div>
+        {if $sArticle.images[0] && $sArticle.images[0].thumbnails[1]}
+            <div class="emz-product--details-description-box emz-product--details-description-box-right">
+                <img srcset="{$sArticle.images[0].thumbnails[1].sourceSet}"
+                    alt="{$sArticle.articleName}"
+                    title="{$sArticle.articleName}" />
+            </div>
+        {/if}
     </div>
     {if $sArticle.sSimilarArticles || $sArticle.sRelatedArticles}
         <div class="emz-product--details-recommendation-wrapper">
