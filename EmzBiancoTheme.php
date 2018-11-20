@@ -197,9 +197,9 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
     public function getShopPageGroupNames()
     {
         return array(
-            'emzFooterFifthColumn' => 'EmzBiancoTheme Footer Spalte 5',
-            'emzFooterFourthColumn' => 'EmzBiancoTheme Footer Spalte 4',
-            'emzFooterNavigation' => 'EmzBiancoTheme Footer Navigation'
+            'emzFooterFifthColumn' => 'emzFooterFifthColumn',
+            'emzFooterFourthColumn' => 'emzFooterFourthColumn',
+            'emzFooterNavigation' => 'emzFooterNavigation'
         );
     }
 
