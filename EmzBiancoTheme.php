@@ -4,6 +4,10 @@ namespace EmzBiancoTheme;
 
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Models\Plugin\Plugin;
+use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Shopware\Components\Plugin\Context\UninstallContext;
+use Shopware\Components\Plugin\Context\UpdateContext;
+
 
 class EmzBiancoTheme extends \Shopware\Components\Plugin
 {
@@ -135,4 +139,28 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
             'allowBlank' => true
         ]);
     }
+
+    /**
+     * @param Plugin\Context\UninstallContext $uninstallContext
+     */
+    public function uninstall(UninstallContext $uninstallContext)
+    {
+        parent::uninstall($uninstallContext);
+    }
+
+    /**
+    * @param ContainerBuilder $container
+    */
+    public function build(ContainerBuilder $container)
+    {
+        parent::build($container);
+    }
+
+    public function update(UpdateContext $context)
+    {
+        $version = $context->getCurrentVersion();
+
+        parent::update($context);
+    }
+
 }
