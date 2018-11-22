@@ -9,5 +9,16 @@
             <argument type="service" id="service_container" />
             <tag name="shopware.event_subscriber" />
         </service>
+        <service id="emz_hover_listing.subscriber.frontend" class="EmzBiancoTheme\Subscriber\Frontend">
+            <tag name="shopware.event_subscriber" />
+        </service>
+
+        <service id="emz_hover_listing.list_product_service"
+          class="EmzBiancoTheme\Bundle\StoreFrontBundle\ListProductService"
+          decorates="shopware_storefront.list_product_service"
+          public="false">
+          <argument type="service" id="emz_hover_listing.list_product_service.inner"/>
+          <argument type="service" id="shopware_media.media_service"/>
+        </service>
     </services>
 </container>
