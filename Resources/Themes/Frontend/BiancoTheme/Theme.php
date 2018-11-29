@@ -168,7 +168,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn1Image',
                 '__footer_column_image__',
-                'Bild'
+                'Bild',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 
