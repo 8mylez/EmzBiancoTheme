@@ -176,7 +176,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn1Link',
                 '__footer_column_link__',
-                'Link'
+                'Link',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 
@@ -216,7 +217,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn2Link',
                 '__footer_column_link__',
-                'Link'
+                'Link',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 
@@ -256,7 +258,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn3Link',
                 '__footer_column_link__',
-                'Link'
+                'Link',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 
@@ -296,7 +299,8 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn4Link',
                 '__footer_column_link__',
-                'Link'
+                'Link',
+                ['attributes' => ['lessCompatible' => false]]
             )
         );
 

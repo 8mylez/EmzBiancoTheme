@@ -21,7 +21,7 @@
 
     <nav class="column--navigation column--content">
         <ul class="navigation--list" role="menu">
-            {foreach $sMenu.{$theme.emzFooterColumn3Sitegroup} as $item}
+            {foreach $sMenu.{$theme.emzFooterColumn2Sitegroup} as $item}
             <li class="navigation--entry" role="menuitem">
                 <a class="navigation--link" href="{if $item.link}{$item.link}{else}{url controller='custom' sCustom=$item.id title=$item.description}{/if}"
                    title="{$item.description|escape}"{if $item.target} target="{$item.target}"{/if}>
