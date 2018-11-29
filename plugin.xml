@@ -4,10 +4,15 @@
     <label lang="de">Bianco Theme</label>
     <label lang="en">Bianco Theme</label>
 
-    <version>1.0.6</version>
+    <version>1.0.7</version>
     <link>http://8mylez.com</link>
     <author>8mylez</author>
     <compatibility minVersion="5.2.0" />
+
+    <changelog version="1.0.7">
+        <changes lang="de">Update Funktion hinzugefügt</changes>
+        <changes lang="en">add update function</changes>
+    </changelog>
 
     <changelog version="1.0.6">
         <changes lang="de">Fancy Warenkorb Button hinzugefügt</changes>
