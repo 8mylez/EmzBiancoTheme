@@ -25,9 +25,6 @@
             <li class="navigation--entry" role="menuitem">
                 <a class="navigation--link" href="{if $item.link}{$item.link}{else}{url controller='custom' sCustom=$item.id title=$item.description}{/if}"
                    title="{$item.description|escape}"{if $item.target} target="{$item.target}"{/if}>
-                    <div class='emz-column--icon'>
-                        <i class="fa fa-check" aria-hidden="true"></i>
-                    </div>
                     <div class='emz-column--text'>
                         {$item.description}
                     </div>
