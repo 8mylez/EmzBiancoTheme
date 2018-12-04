@@ -19,7 +19,7 @@
     registerEvents: function () {
       var me = this;
       var $el = me.$el;
-      var parentElement = $el.parent().parent();
+      var parentElement = $el.parent().parent().parent().parent().parent();
 
       me._on(parentElement, 'mouseenter', $.proxy(me.onHover, me, $el, parentElement));
     },
