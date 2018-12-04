@@ -474,7 +474,7 @@ SHOPWARE_EOD;
              ]
          );
 
-         $attributes = array_merge($this->fieldSetDefaults, ['height' => 120]);
+         $attributes = array_merge($this->fieldSetDefaults, ['height' => 80]);
 
          $fieldSet1 = $this->createFieldSet(
              'emzFancyShoppingCart_set',
@@ -492,6 +492,23 @@ SHOPWARE_EOD;
          );
 
          $tab->addElement($fieldSet1);
+
+         $fieldSet2 = $this->createFieldSet(
+             'emzAboCommerce_set',
+             '__aboCommerce_tab_column__',
+             ['attributes' => $attributes]
+         );
+
+         $fieldSet2->addElement(
+             $this->createCheckboxField(
+                 'emzAboCommerce',
+                 '__aboCommerce__',
+                 false,
+                 ['attributes' => $attributes]
+             )
+         );
+
+         $tab->addElement($fieldSet2);
 
          return $tab;
      }
