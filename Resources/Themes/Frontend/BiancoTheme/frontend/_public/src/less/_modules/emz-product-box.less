@@ -223,14 +223,18 @@
     
                 .emz--hover-image {
                     opacity: 1;
-                    transition: opacity 0.5s ease-in-out;
+                    transition-duration: .55s;
+                    transition-property: opacity;
+                    transition-timing-function: cubic-bezier(0.4,0,.2,1);
                     position: absolute;
                 }
             
                 .emz-image--media-second {
                     display: block;
                     opacity: 0;
-                    transition: opacity 0.5s ease-in-out 0.1s;
+                    transition-duration: .55s;
+                    transition-property: opacity;
+                    transition-timing-function: cubic-bezier(0.4,0,.2,1);
                     position: absolute;
                     .unitize(left, 50);
                 }
