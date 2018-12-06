@@ -8,6 +8,6 @@
         </p>
     {/if}
     {if $User.$address.country.countryen == "AUSTRIA"}
-    Steuerfreie innergemeinschaftliche Lieferung
+    {s name="DocumentIndexAustriaInformation"}Steuerfreie innergemeinschaftliche Lieferung{/s}
     {/if}
 {/block}
