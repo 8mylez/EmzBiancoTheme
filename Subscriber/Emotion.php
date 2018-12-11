@@ -30,7 +30,7 @@ class Emotion implements SubscriberInterface
     public function onPostDispatchBackendEmotion(\Enlight_Event_EventArgs $args)
     {
         $view = $args->getSubject()->View();
-        $view->addTemplateDir($this->pluginDirectory . '/Resources/views');
+        $view->addTemplateDir($this->pluginDirectory . '/Resources/Views');
         $view->extendsTemplate('backend/emotion/emz_bianco_theme/view/detail/elements/elegance_hover.js');
         $view->extendsTemplate('backend/emotion/emz_bianco_theme/view/detail/elements/classic_hover.js');
     }
