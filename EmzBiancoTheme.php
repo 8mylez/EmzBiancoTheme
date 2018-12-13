@@ -5,6 +5,7 @@ namespace EmzBiancoTheme;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
+use Shopware\Components\Plugin\Context\UpdateContext;
 use Shopware\Models\Emotion\Library\Component;
 use Shopware\Models\Plugin\Plugin;
 
@@ -86,6 +87,10 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
 
     $em->remove($component);
     $em->flush();
+  }
+
+  public function update(UpdateContext $context) {
+    $this->buildAttribute();
   }
 
   /**
