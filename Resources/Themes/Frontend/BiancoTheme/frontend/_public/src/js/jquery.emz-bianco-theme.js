@@ -1,5 +1,5 @@
 (function($, window) {
-    
+
     window.StateManager
         .addPlugin('*[data-offcanvas="true"]', 'swOffcanvasMenu', ['m'])
         .addPlugin('*[data-emz-offcanvas="true"]', 'swOffcanvasMenu', ['m','l','xl'])
@@ -16,4 +16,19 @@
         $('.sidebar-main.off-canvas').removeClass('off-canvas');
     }
 
+    function onOpenMenu() {
+        if($('input[name=sSearch]').length) {
+            $('input[name=sSearch]').focus();
+        }
+    }
+
+    function onCloseMenu() {
+        if($('input[name=sSearch]').length) {
+            $('input[name=sSearch]').blur();
+        }
+    }
+
+    $.subscribe('plugin/swOffcanvasMenu/onClickElement', onOpenMenu);
+    $.subscribe('plugin/swOffcanvasMenu/onClickCloseButton', onCloseMenu);
+    
 })(jQuery, window);
