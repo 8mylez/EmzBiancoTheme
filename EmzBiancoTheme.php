@@ -5,7 +5,10 @@ namespace EmzBiancoTheme;
 use Shopware\Models\Plugin\Plugin;
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
+use Shopware\Components\Model\ModelManager;
+use Shopware\Components\Emotion\ComponentInstaller;
 use Shopware\Models\Site\Group;
+use Shopware\Models\Media\Album;
 
 class EmzBiancoTheme extends \Shopware\Components\Plugin
 {
@@ -16,6 +19,7 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
     {
         $this->addEmotionComponents();
         $this->addShopPageGroups();
+        $this->addArticleAlbumThumbnailSizes();
     }
 
     /**
@@ -24,6 +28,7 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
     public function uninstall(UninstallContext $context)
     {
         $this->removeShopPageGroups();
+        $this->removeArticleAlbumThumbnailSizes();
     }
 
     /**
@@ -31,6 +36,7 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
      */
     public function addEmotionComponents()
     {
+        /** @var ComponentInstaller $emotionComponentHandler */
         $emotionComponentHandler = $this->container->get('shopware.emotion_component_installer');
 
         //add elegance hover component
@@ -163,7 +169,9 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
      */
     public function addShopPageGroups()
     {
+        /** @var ModelManager $modelManager */
         $modelManager = $this->container->get('models');
+
         $groupRepository = $modelManager->getRepository(Group::class);
         $shopPageGroups = $this->getShopPageGroupNames();
 
@@ -183,7 +191,9 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
      */
     public function removeShopPageGroups()
     {
+        /** @var ModelManager $modelManager */
         $modelManager = $this->container->get('models');
+
         $groupRepository = $modelManager->getRepository(Group::class);
         $shopPageGroups = $this->getShopPageGroupNames();
 
@@ -209,6 +219,79 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
             'emzFooterThirdColumn' => 'EmzBiancoTheme Footer Spalte 3',
             'emzFooterFourthColumn' => 'EmzBiancoTheme Footer Spalte 4',
             'emzFooterNavigation' => 'EmzBiancoTheme Footer-Navigation'
+        ];
+    }
+
+    /**
+     * Adds thumbnail size used in listing
+     */
+    public function addArticleAlbumThumbnailSizes()
+    {
+        /** @var ModelManager $modelManager */
+        $modelManager = $this->container->get('models');
+
+        $albumRepository = $modelManager->getRepository(Album::class);
+        $album = $albumRepository->find(Album::ALBUM_ARTICLE);
+
+        if (!$album) {
+            return;
+        }
+
+        $settings = $album->getSettings();
+        $thumbnailSize = $settings->getThumbnailSize();
+
+        $newSizes = $this->getArticleAlbumThumbnailSizes();
+
+        foreach ($newSizes as $size) {
+            if (in_array($size, $thumbnailSize)) {
+                continue;
+            }
+
+            $thumbnailSize[] = $size;
+        }
+
+        $settings->setThumbnailSize($thumbnailSize);
+        $modelManager->flush();
+    }
+
+    public function removeArticleAlbumThumbnailSizes()
+    {
+        /** @var ModelManager $modelManager */
+        $modelManager = $this->container->get('models');
+
+        $albumRepository = $modelManager->getRepository(Album::class);
+        $album = $albumRepository->find(Album::ALBUM_ARTICLE);
+
+        if (!$album) {
+            return;
+        }
+
+        $settings = $album->getSettings();
+        $thumbnailSize = $settings->getThumbnailSize();
+
+        $newSizes = $this->getArticleAlbumThumbnailSizes();
+
+        foreach ($newSizes as $size) {
+            foreach ($thumbnailSize as $key => $defaultSize) {
+                if ($size == $defaultSize) {
+                    unset($thumbnailSize[$key]);
+                }
+            }
+        }
+
+        $settings->setThumbnailSize($thumbnailSize);
+        $modelManager->flush();
+    }
+
+    /**
+     * Returns an array with new thumbnail sizes for article album
+     *
+     * @return array
+     */
+    public function getArticleAlbumThumbnailSizes()
+    {
+        return [
+            '270x405'
         ];
     }
 }
