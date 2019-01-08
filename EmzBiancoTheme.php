@@ -2,16 +2,34 @@
 
 namespace EmzBiancoTheme;
 
-use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Models\Plugin\Plugin;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
-use Shopware\Components\Plugin\Context\UpdateContext;
-
+use Shopware\Models\Site\Group;
 
 class EmzBiancoTheme extends \Shopware\Components\Plugin
 {
+    /**
+     * @param InstallContext $context
+     */
     public function install(InstallContext $context)
+    {
+        $this->addEmotionComponents();
+        $this->addShopPageGroups();
+    }
+
+    /**
+     * @param UninstallContext $context
+     */
+    public function uninstall(UninstallContext $context)
+    {
+        $this->removeShopPageGroups();
+    }
+
+    /**
+     * Adds emotion components "elegance hover" and "classic hover"
+     */
+    public function addEmotionComponents()
     {
         $emotionComponentHandler = $this->container->get('shopware.emotion_component_installer');
 
@@ -141,26 +159,56 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
     }
 
     /**
-     * @param Plugin\Context\UninstallContext $uninstallContext
+     * Adds all shop page groups, that are used in the theme
      */
-    public function uninstall(UninstallContext $uninstallContext)
+    public function addShopPageGroups()
     {
-        parent::uninstall($uninstallContext);
+        $modelManager = $this->container->get('models');
+        $groupRepository = $modelManager->getRepository(Group::class);
+        $shopPageGroups = $this->getShopPageGroupNames();
+
+        foreach ($shopPageGroups as $key => $name) {
+            if (!$groupRepository->findOneBy(['key' => $key])) {
+                $group = new Group();
+                $group->setKey($key);
+                $group->setName($name);
+
+                $modelManager->persist($group);
+            }
+        }
     }
 
     /**
-    * @param ContainerBuilder $container
-    */
-    public function build(ContainerBuilder $container)
+     * Removes all shop page groups, that were used in the theme
+     */
+    public function removeShopPageGroups()
     {
-        parent::build($container);
+        $modelManager = $this->container->get('models');
+        $groupRepository = $modelManager->getRepository(Group::class);
+        $shopPageGroups = $this->getShopPageGroupNames();
+
+        foreach ($shopPageGroups as $key => $name) {
+            $group = $groupRepository->findOneBy(['key' => $key]);
+
+            if ($group !== null) {
+                $modelManager->remove($group);
+                $modelManager->flush();
+            }
+        }
     }
 
-    public function update(UpdateContext $context)
+    /**
+     * Returns an array with the names and keys of the used shop pages groups in the theme
+     *
+     * @return array
+     */
+    public function getShopPageGroupNames()
     {
-        $version = $context->getCurrentVersion();
-
-        parent::update($context);
+        return [
+            'emzFooterSecondColumn' => 'EmzBiancoTheme Footer-Spalte 2',
+            'emzFooterThirdColumn' => 'EmzBiancoTheme Footer Spalte 3',
+            'emzFooterFourthColumn' => 'EmzBiancoTheme Footer Spalte 4',
+            'emzFooterNavigation' => 'EmzBiancoTheme Footer-Navigation'
+        ];
     }
-
 }
