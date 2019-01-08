@@ -2,17 +2,34 @@
 
 namespace EmzBiancoTheme;
 
+use Shopware\Models\Plugin\Plugin;
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
-use Shopware\Models\Plugin\Plugin;
-use Symfony\Component\DependencyInjection\ContainerBuilder;
-use Shopware\Components\Plugin\Context\UninstallContext;
-use Shopware\Components\Plugin\Context\UpdateContext;
-
+use Shopware\Models\Site\Group;
 
 class EmzBiancoTheme extends \Shopware\Components\Plugin
 {
+    /**
+     * @param InstallContext $context
+     */
     public function install(InstallContext $context)
+    {
+        $this->addEmotionComponents();
+        $this->addShopPageGroups();
+    }
+
+    /**
+     * @param UninstallContext $context
+     */
+    public function uninstall(UninstallContext $context)
+    {
+        $this->removeShopPageGroups();
+    }
+
+    /**
+     * Adds emotion components "elegance hover" and "classic hover"
+     */
+    public function addEmotionComponents()
     {
         $emotionComponentHandler = $this->container->get('shopware.emotion_component_installer');
 
@@ -139,115 +156,59 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
             'fieldLabel' => 'Hintergrundfarbe',
             'allowBlank' => true
         ]);
-
-        $this->installShopPageGroups();
-    }
-
-    public function uninstall(UninstallContext $context)
-    {
-        $this->uninstallShopPageGroups();
     }
 
     /**
-     * Installs all needed shop page groups, that are needed in the theme
-     *
-     * @return bool
+     * Adds all shop page groups, that are used in the theme
      */
-    public function installShopPageGroups()
+    public function addShopPageGroups()
     {
-        $manager = Shopware()->Models();
+        $modelManager = $this->container->get('models');
+        $groupRepository = $modelManager->getRepository(Group::class);
         $shopPageGroups = $this->getShopPageGroupNames();
 
-        foreach ($shopPageGroups as $shopPageGroupKey => $shopPageGroupName) {
-            if ($this->checkShopPageGroupKey($shopPageGroupKey)) {
-                $model = new \Shopware\Models\Site\Group();
-                $model->setKey($shopPageGroupKey);
-                $model->setName($shopPageGroupName);
+        foreach ($shopPageGroups as $key => $name) {
+            if (!$groupRepository->findOneBy(['key' => $key])) {
+                $group = new Group();
+                $group->setKey($key);
+                $group->setName($name);
 
-                $manager->persist($model);
+                $modelManager->persist($group);
             }
         }
-        return true;
     }
 
     /**
-     * Uninstalls all shop page groups that were needed in the theme
-     *
-     * @return bool
+     * Removes all shop page groups, that were used in the theme
      */
-    public function uninstallShopPageGroups()
+    public function removeShopPageGroups()
     {
-        $manager = Shopware()->Models();
-        $repository = $manager->getRepository('Shopware\Models\Site\Group');
+        $modelManager = $this->container->get('models');
+        $groupRepository = $modelManager->getRepository(Group::class);
         $shopPageGroups = $this->getShopPageGroupNames();
 
-        foreach ($shopPageGroups as $shopPageGroupKey => $shopPageGroupName) {
-            $model = $repository->findOneBy(['key' => $shopPageGroupKey]);
-            if ($model !== null) {
-                $manager->remove($model);
-                $manager->flush();
+        foreach ($shopPageGroups as $key => $name) {
+            $group = $groupRepository->findOneBy(['key' => $key]);
+
+            if ($group !== null) {
+                $modelManager->remove($group);
+                $modelManager->flush();
             }
         }
-
-        return true;
     }
 
     /**
-     * Returns an array with the names and keys of the used shop pages groups in the theme.
-     * It can be easily extended for future updates
+     * Returns an array with the names and keys of the used shop pages groups in the theme
      *
      * @return array
      */
     public function getShopPageGroupNames()
     {
-        return array(
-            'emzFooterFifthColumn' => 'emzFooterFifthColumn',
-            'emzFooterFourthColumn' => 'emzFooterFourthColumn',
-            'emzFooterNavigation' => 'emzFooterNavigation'
-        );
+        return [
+            'emzFooterSecondColumn' => 'EmzBiancoTheme Footer-Spalte 2',
+            'emzFooterThirdColumn' => 'EmzBiancoTheme Footer Spalte 3',
+            'emzFooterFourthColumn' => 'EmzBiancoTheme Footer Spalte 4',
+            'emzFooterNavigation' => 'EmzBiancoTheme Footer-Navigation'
+        ];
     }
-
-    /**
-     * Checks if the group key already exits
-     *
-     * @param string $key
-     * @return bool
-     */
-    public function checkShopPageGroupKey($key)
-    {
-        $manager = Shopware()->Models();
-        $repository = $manager->getRepository('Shopware\Models\Site\Group');
-
-        // Check if key exists
-        $model = $repository->findOneBy(['key' => $key]);
-        if ($model !== null) {
-            return false;
-        }
-
-        return true;
-    }
-
-    /**
-     * @param Plugin\Context\UninstallContext $uninstallContext
-     */
-    public function uninstall(UninstallContext $uninstallContext)
-    {
-        parent::uninstall($uninstallContext);
-    }
-
-    /**
-    * @param ContainerBuilder $container
-    */
-    public function build(ContainerBuilder $container)
-    {
-        parent::build($container);
-    }
-
-    public function update(UpdateContext $context)
-    {
-        $version = $context->getCurrentVersion();
-
-        parent::update($context);
-    }
-
 }
