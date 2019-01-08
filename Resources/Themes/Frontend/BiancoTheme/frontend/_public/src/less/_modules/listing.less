@@ -29,7 +29,7 @@
     width: 50%;
     .unitize(height, 34);
     .unitize(margin-bottom, 10);
-    
+
     .sort--label {
         color: #000;
     }
@@ -42,8 +42,9 @@
             color: #000;
             text-align-last: right;
             direction: rtl;
+            .unitize-padding(0, 30, 0, 0);
         }
-        
+
         &:after {
             content: "\f0ec";
             font-family: FontAwesome;
@@ -74,7 +75,7 @@
     }
 }
 
-@media screen and(min-width: @tabletViewportWidth) { 
+@media screen and(min-width: @tabletViewportWidth) {
     .listing--content {
         .unitize-padding(0, 25);
     }
@@ -82,7 +83,7 @@
     .listing--actions {
         padding-top: 0;
     }
-    
+
     .filter--trigger {
         width: auto;
         float: none;
@@ -100,7 +101,7 @@
     }
 }
 
-@media screen and(min-width: @desktopViewportWidth) { 
+@media screen and(min-width: @desktopViewportWidth) {
     .listing--content {
         .unitize(margin-top, 20);
     }
