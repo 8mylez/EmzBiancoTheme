@@ -4,10 +4,15 @@
     <label lang="de">Bianco Theme</label>
     <label lang="en">Bianco Theme</label>
 
-    <version>1.1.6</version>
+    <version>1.1.7</version>
     <link>http://8mylez.com</link>
     <author>8mylez</author>
     <compatibility minVersion="5.2.0" />
+
+    <changelog version="1.1.7">
+        <changes lang="de">Neue Thumbnailgröße fürs Artikel-Album wird bei Installation erstellt</changes>
+        <changes lang="en">add new thumbnailsize for article-alcum upon installation</changes>
+    </changelog>
 
     <changelog version="1.1.6">
         <changes lang="de">Standard Shopseiten-Gruppen werden bei Installation hinzugefügt</changes>
