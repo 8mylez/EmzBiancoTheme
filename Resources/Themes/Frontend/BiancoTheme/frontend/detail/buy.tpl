@@ -3,7 +3,7 @@
 {block name='frontend_detail_buy_quantity'}
     {if $sArticle.emz_external_article_link_url eq ""}
         <input type='hidden' name='sQuantity' value='1' />
-    {/ifinput }
+    {/if}
 {/block}
 
 {* "Buy now" button *}
