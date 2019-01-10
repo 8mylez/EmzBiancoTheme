@@ -71,7 +71,18 @@
 
             {if $sArticle.sConfigurator}
                 <div class="emz-detail-product--configurator product--configurator">
-                    {include file="frontend/detail/emz-config-variants.tpl"}
+                    <div class="product--configurator">
+                    {if $sArticle.sConfigurator}
+                        {if $sArticle.sConfiguratorSettings.type == 1}
+                            {$file = 'frontend/detail/config_step.tpl'}
+                        {elseif $sArticle.sConfiguratorSettings.type == 2}
+                            {$file = 'frontend/detail/config_variant.tpl'}
+                        {else}
+                            {$file = 'frontend/detail/config_upprice.tpl'}
+                        {/if}
+                        {include file=$file}
+                    {/if}
+                </div>
                 </div>
             {/if}
 
