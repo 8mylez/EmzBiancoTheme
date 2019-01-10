@@ -4,10 +4,15 @@
     <label lang="de">Bianco Theme</label>
     <label lang="en">Bianco Theme</label>
 
-    <version>1.2.1</version>
+    <version>1.2.2</version>
     <link>http://8mylez.com</link>
     <author>8mylez</author>
     <compatibility minVersion="5.2.0" />
+
+    <changelog version="1.2.2">
+        <changes lang="de">Artikel Varianten Funktion hinzugefügt</changes>
+        <changes lang="en">add article variant function</changes>
+    </changelog>
 
     <changelog version="1.2.1">
         <changes lang="de">Neue Thumbnailgröße fürs Artikel-Album wird bei Installation erstellt</changes>

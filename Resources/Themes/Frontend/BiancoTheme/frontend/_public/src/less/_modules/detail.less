@@ -25,7 +25,7 @@
 
         .emz-detail-product-image {
             width: 100%;
-            
+
             .image-slider--container {
                 .unitize(height, 365);
 
@@ -93,11 +93,29 @@
 
         .emz-detail-product--configurator {
             border-bottom: 1px solid #eee;
-            .unitize(height, 70);
 
             .configurator--form {
                 .unitize(padding-top, 20);
                 .unitize(padding-bottom, 20);
+
+                .configurator--label{
+                    color: black;
+                }
+
+                .select-field select{
+                    border-radius: 0;
+                    background: none;
+                }
+            }
+
+            .configurator--variant{
+                .variant--name{
+                    color: black;
+                }
+
+                .option--label{
+                    border-radius: 0;
+                }
             }
 
             .emz-detail-product-variants {
