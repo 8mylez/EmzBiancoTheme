@@ -52,28 +52,28 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
     }
 
     public function buildAttribute() {
-    $service = $this->container->get('shopware_attribute.crud_service');
+        $service = $this->container->get('shopware_attribute.crud_service');
 
-    $service->update('s_articles_attributes', 'emz_hover_image', 'single_selection', [
-      'entity' => \Shopware\Models\Media\Media::class,
-      'label' => 'Bild beim Hovern',
-      'displayInBackend' => true,
-      'helpText' => 'Das Bild, welches beim Hovern im Listing angezeigt wird.',
-      'position' => 0,
-      'custom' => false,
-    ]);
+        $service->update('s_articles_attributes', 'emz_hover_image', 'single_selection', [
+        'entity' => \Shopware\Models\Media\Media::class,
+        'label' => 'Bild beim Hovern',
+        'displayInBackend' => true,
+        'helpText' => 'Das Bild, welches beim Hovern im Listing angezeigt wird.',
+        'position' => 0,
+        'custom' => false,
+        ]);
 
-    $service->update('s_articles_attributes', 'emz_hover_image_standby', 'boolean', [
-      'entity' => \Shopware\Models\Media\Media::class,
-      'label' => 'Zweites Artikelbild für Hover nutzen',
-      'defaultValue' => true,
-      'displayInBackend' => true,
-      'helpText' => 'Falls kein spezifisches Hover Bild ausgewählt wird, wird das zweite Artikelbild genutzt.',
-      'position' => 0,
-      'custom' => false,
-    ],null,false,true);
+        $service->update('s_articles_attributes', 'emz_hover_image_standby', 'boolean', [
+        'entity' => \Shopware\Models\Media\Media::class,
+        'label' => 'Zweites Artikelbild für Hover nutzen',
+        'defaultValue' => true,
+        'displayInBackend' => true,
+        'helpText' => 'Falls kein spezifisches Hover Bild ausgewählt wird, wird das zweite Artikelbild genutzt.',
+        'position' => 0,
+        'custom' => false,
+        ],null,false,true);
 
-    $this->rebuildModel();
+        $this->rebuildModel();
     }
 
     public function rebuildModel() {
