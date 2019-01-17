@@ -29,8 +29,6 @@ SHOPWARE_EOD;
     ];
 
     protected $javascript = [
-        'src/js/jquery.emz-loadOnHover.js',
-        'src/js/jquery.emz-hl-responsive.js',
         'src/js/jquery.override.emz-filter-component.js',
         'src/js/jquery.override.emz-listing-actions.js',
         'src/js/jquery.override.emz-subcategory-nav.js',
