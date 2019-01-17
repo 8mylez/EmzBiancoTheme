@@ -5,10 +5,12 @@ namespace EmzBiancoTheme;
 use Shopware\Models\Plugin\Plugin;
 use Shopware\Components\Plugin\Context\InstallContext;
 use Shopware\Components\Plugin\Context\UninstallContext;
+use Shopware\Components\Plugin\Context\UpdateContext;
 use Shopware\Components\Model\ModelManager;
 use Shopware\Components\Emotion\ComponentInstaller;
 use Shopware\Models\Site\Group;
 use Shopware\Models\Media\Album;
+use Shopware\Models\Emotion\Library\Component;
 
 class EmzBiancoTheme extends \Shopware\Components\Plugin
 {
@@ -17,9 +19,13 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
      */
     public function install(InstallContext $context)
     {
+        $this->buildAttribute();
+
         $this->addEmotionComponents();
         $this->addShopPageGroups();
         $this->addArticleAlbumThumbnailSizes();
+
+        parent::install($context);
     }
 
     /**
@@ -27,8 +33,67 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
      */
     public function uninstall(UninstallContext $context)
     {
+        $this->deleteAttribute();
+
         $this->removeShopPageGroups();
         $this->removeArticleAlbumThumbnailSizes();
+
+        parent::uninstall($context);
+    }
+
+    /**
+     * @param UpdateContext $context
+     */
+    public function update(UpdateContext $context) {
+
+        $this->buildAttribute();
+
+        parent::update($context);
+    }
+
+    public function buildAttribute() {
+    $service = $this->container->get('shopware_attribute.crud_service');
+
+    $service->update('s_articles_attributes', 'emz_hover_image', 'single_selection', [
+      'entity' => \Shopware\Models\Media\Media::class,
+      'label' => 'Bild beim Hovern',
+      'displayInBackend' => true,
+      'helpText' => 'Das Bild, welches beim Hovern im Listing angezeigt wird.',
+      'position' => 0,
+      'custom' => false,
+    ]);
+
+    $service->update('s_articles_attributes', 'emz_hover_image_standby', 'boolean', [
+      'entity' => \Shopware\Models\Media\Media::class,
+      'label' => 'Zweites Artikelbild für Hover nutzen',
+      'defaultValue' => true,
+      'displayInBackend' => true,
+      'helpText' => 'Falls kein spezifisches Hover Bild ausgewählt wird, wird das zweite Artikelbild genutzt.',
+      'position' => 0,
+      'custom' => false,
+    ],null,false,true);
+
+    $this->rebuildModel();
+    }
+
+    public function rebuildModel() {
+        $metaDataCache = Shopware()->Models()->getConfiguration()->getMetadataCacheImpl();
+        $metaDataCache->deleteAll();
+        Shopware()->Models()->generateAttributeModels(['s_articles_attributes']);
+    }
+
+    public function deleteAttribute() {
+        $service = $this->container->get('shopware_attribute.crud_service');
+        try{
+        $service->delete('s_articles_attributes', 'emz_hover_image');
+        }catch(\Exception $e){}
+
+        try{
+        $service->delete('s_articles_attributes', 'emz_hover_image_standby');
+        }catch(\Exception $e){}
+
+        $this->rebuildModel();
+
     }
 
     /**
@@ -162,6 +227,7 @@ class EmzBiancoTheme extends \Shopware\Components\Plugin
             'fieldLabel' => 'Hintergrundfarbe',
             'allowBlank' => true
         ]);
+
     }
 
     /**
