@@ -88,3 +88,34 @@
         margin: 0 auto;
     }
 }
+
+.product--box.box--emotion {
+
+    .product--image {
+
+            .emz--hover-image {
+                opacity: 1;
+            }
+        
+            .emz-image--media-second {
+                display: block;
+                opacity: 0;
+            }
+
+        
+    }
+
+    &:hover {
+        .product--image {
+
+            .emz--hover-image {
+                opacity: 0;
+            }
+    
+            .emz-image--media-second {
+                opacity: 1;
+            }
+            
+        }
+    }
+}
