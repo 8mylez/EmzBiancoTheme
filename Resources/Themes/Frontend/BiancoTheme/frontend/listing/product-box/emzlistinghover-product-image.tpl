@@ -7,7 +7,7 @@
       {*set plugin active or not*}
       data-emz-hl-active="{if $sArticleHoverImage}true{else}false{/if}" 
       {*this will be the source of the img*}
-      data-emzImageSrc="{$sArticleHoverImage[0]}" 
+      data-emzImageSrc="{$sArticleHoverImage[1]}" 
       {* srcset will be filled with jquery plugin*}
       srcset=""
       alt="{$desc}"
