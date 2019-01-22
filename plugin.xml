@@ -3,7 +3,7 @@
         xsi:noNamespaceSchemaLocation="https://raw.githubusercontent.com/shopware/shopware/5.2/engine/Shopware/Components/Plugin/schema/plugin.xsd">
     <label lang="de">Bianco Theme</label>
     <label lang="en">Bianco Theme</label>
-  
+
     <version>1.3.0</version>
     <link>http://8mylez.com</link>
     <author>8mylez</author>
@@ -12,6 +12,11 @@
     <changelog version="1.3.0">
         <changes lang="de">Hover-Listing integriert</changes>
         <changes lang="en">integration of hover-listing</changes>
+    </changelog>
+
+    <changelog version="1.2.4">
+        <changes lang="de">Bugfix: Varianten Warenkorbbutton</changes>
+        <changes lang="en">fix variants buybutton</changes>
     </changelog>
 
     <changelog version="1.2.3">
