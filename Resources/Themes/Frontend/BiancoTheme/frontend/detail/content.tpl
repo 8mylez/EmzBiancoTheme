@@ -10,6 +10,25 @@
         data-orderNumberSelector=".emz-detail-product-style .emz-ordernumber"
         data-productDetailsSelector=".emz-product--details"
     >
+
+        {* The configurator selection is checked at this early point
+           to use it in different included files in the detail template. *}
+
+        {block name='frontend_detail_index_configurator_settings'}
+
+            {* Variable for tracking active user variant selection *}
+            {$activeConfiguratorSelection = true}
+
+            {if $sArticle.sConfigurator && ($sArticle.sConfiguratorSettings.type == 1 || $sArticle.sConfiguratorSettings.type == 2)}
+                {* If user has no selection in this group set it to false *}
+                {foreach $sArticle.sConfigurator as $configuratorGroup}
+                    {if !$configuratorGroup.selected_value}
+                        {$activeConfiguratorSelection = false}
+                    {/if}
+                {/foreach}
+            {/if}
+        {/block}
+
         <div class="emz-detail-product-gallery" data-image-slider="true" data-thumbnails=".image--thumbnails">
             {include file="frontend/detail/emz-detail-product-gallery.tpl"}
         </div>
