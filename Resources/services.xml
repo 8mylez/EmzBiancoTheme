@@ -5,17 +5,6 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <!-- Add emotion component auto loader -->
-        <service id="emz_bianco_theme.emotion_view_subscriber" class="Shopware\Components\Emotion\EmotionComponentViewSubscriber">
-            <argument>%emz_bianco_theme.plugin_dir%</argument>
-            <tag name="shopware.event_subscriber" />
-        </service>
-
-        <!-- Add TemplateRegistration subscriber-->
-        <service id="emz_bianco_theme.emotion" class="EmzBiancoTheme\Subscriber\Emotion">
-            <argument>%emz_bianco_theme.plugin_dir%</argument>
-            <tag name="shopware.event_subscriber" />
-        </service>
 
         <service id="emz_hover_listing.subscriber.frontend" class="EmzBiancoTheme\Subscriber\Frontend">
             <tag name="shopware.event_subscriber" />
