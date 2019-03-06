@@ -1,7 +1,8 @@
-
+.content--confirm .table--aggregation{
+    display: block;
+}
 
 .shipping-payment--information {
-    display: flex;
     .unitize(margin-bottom, 25);
 
     .confirm--inner-container {
@@ -34,7 +35,7 @@
 
         .basket--footer {
             height: 100%;
-            display: flex;
+            display: block;
             align-items: center;
             color: #000;
             background-color: #fff;
@@ -58,7 +59,7 @@
     .confirm--outer-container {
         .confirm--actions {
             float: none;
-        
+
             &.actions--bottom {
                 .unitize(margin-top, 75);
             }
@@ -70,4 +71,22 @@
             }
         }
     }
+}
+
+@media screen and(min-width: @tabletViewportWidth) {
+    .content--confirm .table--aggregation{
+        visibility: visible;
+    }
+}
+
+@media screen and(min-width: @tabletLandscapeViewportWidth) {
+    .shipping-payment--information{
+        display: flex;
+    }
+    .product--table .table--aggregation{
+        width: 100%;
+    }
+}
+
+@media screen and(min-width: @desktopViewportWidth) {
 }
