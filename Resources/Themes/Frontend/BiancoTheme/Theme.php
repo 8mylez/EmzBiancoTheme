@@ -154,7 +154,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn1Headline',
                 '__footer_column_headline__',
-                'Spalte 1'
+                'Letzte Saison'
             )
         );
 
@@ -162,7 +162,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn1Description',
                 '__footer_column_description__',
-                'Beschreibung 1'
+                ''
             )
         );
 
@@ -170,7 +170,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn1Image',
                 '__footer_column_image__',
-                'Bild',
+                '',
                 ['attributes' => ['lessCompatible' => false]]
             )
         );
@@ -188,7 +188,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn1Linktext',
                 '__footer_column_linktext__',
-                'Linktext'
+                'Mehr entdecken'
             )
         );
 
@@ -204,7 +204,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn2Headline',
                 '__footer_column_headline__',
-                'Spalte 2'
+                'Kontakt'
             )
         );
 
@@ -229,7 +229,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn2Linktext',
                 '__footer_column_linktext__',
-                'Linktext'
+                'Mehr entdecken'
             )
         );
 
@@ -245,7 +245,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn3Headline',
                 '__footer_column_headline__',
-                'Spalte 3'
+                'Services'
             )
         );
 
@@ -270,7 +270,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn3Linktext',
                 '__footer_column_linktext__',
-                'Linktext'
+                'Mehr entdecken'
             )
         );
 
@@ -286,7 +286,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn4Headline',
                 '__footer_column_headline__',
-                'Spalte 4'
+                'Das Unternehmen'
             )
         );
 
@@ -311,7 +311,7 @@ SHOPWARE_EOD;
             $this->createTextField(
                 'emzFooterColumn4Linktext',
                 '__footer_column_linktext__',
-                'Linktext'
+                'Mehr entdecken'
             )
         );
 
