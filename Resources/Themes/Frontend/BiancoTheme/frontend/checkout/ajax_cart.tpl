@@ -99,7 +99,7 @@
                         {s name="AjaxCartEmzTotal" namespace="frontend/checkout/ajax_cart"}Gesamtpreis{/s}
                     </span>
                     <span class="emz-ajax-cart-summary-amount">
-                        {$sBasket.sAmount|currency}
+                        {if $sAmountWithTax && $sUserData.additional.charge_vat}{$sAmountWithTax|currency}{else}{$sAmount|currency}{/if}
                     </span>
                 </div>
             </div>
