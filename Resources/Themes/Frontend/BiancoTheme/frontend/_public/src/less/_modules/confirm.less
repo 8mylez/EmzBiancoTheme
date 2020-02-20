@@ -25,6 +25,7 @@
                 border: 0;
                 background-color: #fff;
                 color: #000;
+                margin: 0 auto;
             }
         }
     }
@@ -32,10 +33,23 @@
 
 .confirm--content .table--aggregation{
     display: block;
+    margin: 0;
 }
 
 .is--act-confirm .product--table .table--aggregation{
     width: 45%;
+
+    .feature--user-comment {
+        .unitize(margin-top, 40);
+
+        .user-comment--field {
+            .unitize(height, 40);
+            background-color: #fff;
+            border-radius: 0px;
+            border: 1px solid #111;
+            color: #000;
+        }
+    }
 }
 
 @media screen and(min-width: @tabletViewportWidth) {
