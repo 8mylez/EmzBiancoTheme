@@ -1,4 +1,10 @@
 {block name='frontend_account_payment_error_messages'}
+    {block name='frontend_account_payment_error_messages_paypal_unified_errors'}
+        {if $paypalUnifiedErrorCode}
+            {include file='frontend/paypal_unified/checkout/error_message.tpl'}
+        {/if}
+    {/block}
+    
     {include file="frontend/register/error_message.tpl" error_messages=$sErrorMessages}
 {/block}
 
@@ -22,6 +28,12 @@
                 <h3 class="payment--method-headline panel--title is--underline">{s namespace='frontend/checkout/shipping_payment' name='ChangePaymentTitle'}{/s}</h3>
                 {block name='frontend_checkout_shipping_payment_core_payment_fields'}
                     {include file='frontend/checkout/change_payment.tpl' form_data=$sFormData error_flags=$sErrorFlag payment_means=$sPaymentMeans}
+
+                    {block name='frontend_checkout_shipping_payment_core_buttons_top_paypal_unified_plus'}
+                        {if $paypalUnifiedUsePlus && $paypalUnifiedApprovalUrl}
+                            <div class="is--hidden paypal-unified--plus-approval-url">{$paypalUnifiedApprovalUrl}</div>
+                        {/if}
+                    {/block}
                 {/block}
             </div>
 
