@@ -30,10 +30,6 @@
                     {/block}
                 </div>
             </form>
-
-            <div class="feature--user-comment block">
-                <textarea class="user-comment--field" data-storage-field="true" data-storageKeyName="sComment" rows="5" cols="20" placeholder="{s name="ConfirmPlaceholderComment" namespace="frontend/checkout/confirm"}{/s}" data-pseudo-text="true" data-selector=".user-comment--hidden">{$sComment|escape}</textarea>
-            </div>
         </div>
 
         {block name='frontend_checkout_cart_footer_field_labels'}

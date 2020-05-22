@@ -610,6 +610,49 @@
         {/block}
     {/if}
 
+    {* Additional feature which can be enabled / disabled in the base configuration *}
+    {if {config name=commentArticle}||{config name=bonussystem} && {config name=bonus_system_active} && {config name=displaySlider}}
+        {block name="frontend_checkout_confirm_additional_features"}
+            <div class="panel has--border additional--features">
+                {block name="frontend_checkout_confirm_additional_features_headline"}
+                    <div class="panel--title is--underline">
+                        {s name="ConfirmHeadlineAdditionalOptions"}{/s}
+                    </div>
+                {/block}
+
+                {block name="frontend_checkout_confirm_additional_features_content"}
+                    <div class="panel--body is--wide block-group">
+
+                                {* Additional feature - Add product using the sku *}
+                                {block name="frontend_checkout_confirm_additional_features_add_product"}
+                                    <div class="feature--add-product block">
+                                        <form method="post" action="{url action='addArticle' sTargetAction=$sTargetAction}" class="table--add-product add-product--form block-group">
+
+                                            {block name='frontend_checkout_confirm_add_product_field'}
+                                                <input name="sAdd" class="add-product--field block" type="text" placeholder="{s name='CheckoutFooterAddProductPlaceholder' namespace='frontend/checkout/cart_footer_left'}{/s}" />
+                                            {/block}
+
+                                            {block name='frontend_checkout_confirm_add_product_button'}
+                                                <button type="submit" class="add-product--button btn is--primary is--small block">
+                                                    <i class="icon--arrow-right"></i>
+                                                </button>
+                                            {/block}
+                                        </form>
+                                    </div>
+                                {/block}
+
+                        {* Additional customer comment for the order *}
+                        {block name='frontend_checkout_confirm_comment'}
+                            <div class="feature--user-comment block">
+                                <textarea class="user-comment--field" data-storage-field="true" data-storageKeyName="sComment" rows="5" cols="20" placeholder="{s name="ConfirmPlaceholderComment" namespace="frontend/checkout/confirm"}{/s}" data-pseudo-text="true" data-selector=".user-comment--hidden">{$sComment|escape}</textarea>
+                            </div>
+                        {/block}
+                    </div>
+                {/block}
+            </div>
+        {/block}
+    {/if}
+
     {* Premiums articles *}
     {block name='frontend_checkout_confirm_premiums'}
         {if $sUserData.additional.payment.id == $PayPalPaymentId && $PaypalPlusApprovalUrl && !$cameFromStep2}
