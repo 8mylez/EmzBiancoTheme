@@ -20,6 +20,8 @@
 
   .emz-header-categories{
     display: none;
+    flex-grow: 1;
+    overflow: auto;
   }
 
   .emz-header-icons{
@@ -78,6 +80,10 @@
 
 @media screen and(min-width: @tabletViewportWidth) {
   .navigation-main{
+    .navigation--list{
+      padding: 0;
+    }
+
     .emz-header-icons{
       .unitize(width, 178);
 
@@ -96,14 +102,13 @@
     
     .emz-header-logo{
       .unitize(padding-left, 35);
-      .unitize(width, 202);
+      .unitize(min-width, 202);
       .unitize(padding-top, ((@emz-navigation-line-height - @emz-navigation-logo-height) / 2));
     }
 
     .emz-header-categories{
       display: block;
       margin: 0 auto;
-      width: 60%;
 
       .navigation--list{
         background: #111;
@@ -167,7 +172,7 @@
 
     .emz-header-icons{
       .unitize(padding-right, 35);
-      .unitize(width, 240);
+      .unitize(min-width, 240);
 
       &.is-emz-header-icon-left{
         display: none;
@@ -180,14 +185,6 @@
           }
         }
       }
-    }
-  }
-}
-
-@media screen and(min-width: @desktopViewportWidth) {
-  .navigation-main{
-    .emz-header-categories{
-      width: 65%;
     }
   }
 }
