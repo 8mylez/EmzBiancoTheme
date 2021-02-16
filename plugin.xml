@@ -5,182 +5,446 @@
     <label lang="en">Bianco Theme</label>
 
     <version>1.4.1</version>
-    <link>http://8mylez.com</link>
-    <author>8mylez</author>
+    <copyright>(c) by 8mylez GmbH</copyright>
+    <link>https://8mylez.com</link>
+    <author>8mylez GmbH</author>
+    <license>proprietary</license>
     <compatibility minVersion="5.2.0" />
 
+    <description lang="de">
+        <![CDATA[
+        Ist das noch Shopware? Clean, minimal & modern ist die Handschrift unseres Bianco Themes. <br />
+        Durch das klare Design stehen Ihre Produkte im Vordergrund! <br />
+        Keep it simple mit Bianco!
+        ]]>
+    </description>
+    <description lang="en">
+        <![CDATA[
+        Is this still Shopware? Clean, minimal & modern is the signature of our Bianco theme. <br />
+        The clear design puts your products in the foreground! <br />
+        Keep it simple with Bianco!
+        ]]>
+    </description>
+
     <changelog version="1.4.1">
-        <changes lang="de">Fehlerhafter Pfeil in der Navigation behoben</changes>
-        <changes lang="en">Fixed incorrect arrow in the navigation</changes>
+        <changes lang="de">
+            <![CDATA[
+            Fehlerhafter Pfeil in der Navigation behoben
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            Fixed incorrect arrow in the navigation
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.4.0">
-        <changes lang="de">PayPal Plus integriert</changes>
-        <changes lang="en">integration of PayPal Plus</changes>
+        <changes lang="de">
+            <![CDATA[
+            PayPal Plus integriert
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            integration of PayPal Plus
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.3.6">
-        <changes lang="de">Kommentarfeld hinzugefügt</changes>
-        <changes lang="en">Added comment field</changes>
+        <changes lang="de">
+            <![CDATA[
+            Kommentarfeld hinzugefügt
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            Added comment field
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.3.5">
-        <changes lang="de">Gesamtsumme im Ajax-Warenkorb erneut angepasst.</changes>
-        <changes lang="en">Adjusted again the total sum of ajax cart.</changes>
+        <changes lang="de">
+            <![CDATA[
+            Gesamtsumme im Ajax-Warenkorb erneut angepasst.
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            Adjusted again the total sum of ajax cart.
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.3.4">
-        <changes lang="de">Gesamtsumme im Ajax-Warenkorb angepasst.</changes>
-        <changes lang="en">Adjusted the total sum of ajax cart.</changes>
+        <changes lang="de">
+            <![CDATA[
+            Gesamtsumme im Ajax-Warenkorb angepasst.
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            Adjusted the total sum of ajax cart.
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.3.3">
-        <changes lang="de">Gutschein im Checkout</changes>
-        <changes lang="en">Voucher in checkout</changes>
+        <changes lang="de">
+            <![CDATA[
+            Gutschein im Checkout
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            Voucher in checkout
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.3.2">
-        <changes lang="de">Sprachauswahl im Footer</changes>
-        <changes lang="en">language selection in footer</changes>
+        <changes lang="de">
+            <![CDATA[
+            Sprachauswahl im Footer
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            language selection in footer
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.3.1">
-        <changes lang="de">Bugfix Mobile Hover-Listing</changes>
-        <changes lang="en">bugfix mobile hover-listing</changes>
+        <changes lang="de">
+            <![CDATA[
+            Bugfix Mobile Hover-Listing
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            bugfix mobile hover-listing
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.3.0">
-        <changes lang="de">Hover-Listing integriert</changes>
-        <changes lang="en">integration of hover-listing</changes>
+        <changes lang="de">
+            <![CDATA[
+            Hover-Listing integriert
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            integration of hover-listing
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.2.4">
-        <changes lang="de">Bugfix: Varianten Warenkorbbutton</changes>
-        <changes lang="en">fix variants buybutton</changes>
+        <changes lang="de">
+            <![CDATA[
+            Bugfix: Varianten Warenkorbbutton
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            fix variants buybutton
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.2.3">
-        <changes lang="de">Bugfix: Stripe Zahlungsarten</changes>
-        <changes lang="en">fix stripe payments</changes>
+        <changes lang="de">
+            <![CDATA[
+            Bugfix: Stripe Zahlungsarten
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            fix stripe payments
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.2.2">
-        <changes lang="de">Artikel Varianten Funktion hinzugefügt</changes>
-        <changes lang="en">add article variant function</changes>
+        <changes lang="de">
+            <![CDATA[
+            Artikel Varianten Funktion hinzugefügt
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            add article variant function
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.2.1">
-        <changes lang="de">Neue Thumbnailgröße fürs Artikel-Album wird bei Installation erstellt</changes>
-        <changes lang="en">add new thumbnailsize for article-alcum upon installation</changes>
+        <changes lang="de">
+            <![CDATA[
+            Neue Thumbnailgröße fürs Artikel-Album wird bei Installation erstellt
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            add new thumbnailsize for article-alcum upon installation
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.2.0">
-        <changes lang="de">External Article Link Plugin kompabilität</changes>
-        <changes lang="en">add external article link plugin compatibility</changes>
+        <changes lang="de">
+            <![CDATA[
+            External Article Link Plugin kompabilität
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            add external article link plugin compatibility
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.1.6">
-        <changes lang="de">Standard Shopseiten-Gruppen werden bei Installation hinzugefügt</changes>
-        <changes lang="en">default shopsite-groups are added upon installation</changes>
+        <changes lang="de">
+            <![CDATA[
+            Standard Shopseiten-Gruppen werden bei Installation hinzugefügt
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            default shopsite-groups are added upon installation
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.1.5">
-        <changes lang="de">Kleine Design Bugfixes</changes>
-        <changes lang="en">small design bugfixes</changes>
+        <changes lang="de">
+            <![CDATA[
+            Kleine Design Bugfixes
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            small design bugfixes
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.1.4">
-        <changes lang="de">Kleine Design Bugfixes für IE</changes>
-        <changes lang="en">small design bugfixes for ie</changes>
+        <changes lang="de">
+            <![CDATA[
+            Kleine Design Bugfixes für IE
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            small design bugfixes for ie
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.1.3">
-        <changes lang="de">Bugfix Suche auf mobilen Geräten</changes>
-        <changes lang="en">fix search menu on mobile</changes>
+        <changes lang="de">
+            <![CDATA[
+            Bugfix Suche auf mobilen Geräten
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            fix search menu on mobile
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.1.2">
-        <changes lang="de">Ein Bug mit den Einkaufswelten wurde behoben.</changes>
-        <changes lang="en">Fix a bug with the emotion worlds.</changes>
+        <changes lang="de">
+            <![CDATA[
+            Ein Bug mit den Einkaufswelten wurde behoben.
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            Fix a bug with the emotion worlds.
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.1.1">
-        <changes lang="de">Kommentar bei Rechnungen für Österreich hinzugefügt</changes>
-        <changes lang="en">add austria invoice comment</changes>
+        <changes lang="de">
+            <![CDATA[
+            Kommentar bei Rechnungen für Österreich hinzugefügt
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            add austria invoice comment
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.1.0">
         <changes lang="de">
-            - Neues Plugin Logo hinzugefügt
+            <![CDATA[
+            - Neues Plugin Logo hinzugefügt <br />
             - Abo Commerce Design hinzugefügt
+            ]]>
         </changes>
         <changes lang="en">
-            - add new plugin logo
+            <![CDATA[
+            - add new plugin logo <br />
             - add abo commerce design
+            ]]>
         </changes>
     </changelog>
 
     <changelog version="1.0.9">
-        <changes lang="de">fix 2nd footer column items design</changes>
-        <changes lang="en">fix 2nd footer column items design</changes>
+        <changes lang="de">
+            <![CDATA[
+            fix 2nd footer column items design
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            fix 2nd footer column items design
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.0.8">
-        <changes lang="de">Fix Theme Link Konfiguration</changes>
-        <changes lang="en">fix theme link configuration</changes>
+        <changes lang="de">
+            <![CDATA[
+            Fix Theme Link Konfiguration
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            fix theme link configuration
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.0.7">
-        <changes lang="de">Update Funktion hinzugefügt</changes>
-        <changes lang="en">add update function</changes>
+        <changes lang="de">
+            <![CDATA[
+            Update Funktion hinzugefügt
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            add update function
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.0.6">
-        <changes lang="de">Fancy Warenkorb Button hinzugefügt</changes>
-        <changes lang="en">add fancy cart button</changes>
+        <changes lang="de">
+            <![CDATA[
+            Fancy Warenkorb Button hinzugefügt
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            add fancy cart button
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.0.5">
-        <changes lang="de">Social media fix</changes>
-        <changes lang="en">Social media fix</changes>
+        <changes lang="de">
+            <![CDATA[
+            Social media fix
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            Social media fix
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.0.4">
-        <changes lang="de">Theme Konfiguration angepasst</changes>
-        <changes lang="en">adjust theme configuration</changes>
+        <changes lang="de">
+            <![CDATA[
+            Theme Konfiguration angepasst
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            adjust theme configuration
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.0.3">
         <changes lang="de">
-            - Fokus beim öffnen der Suche;
-            - Artikelslider Hintergrund angepasst;
+            <![CDATA[
+            - Fokus beim öffnen der Suche; <br />
+            - Artikelslider Hintergrund angepasst; <br />
             - Badges in den EKW Boxen angepasst
+            ]]>
         </changes>
         <changes lang="en">
-            - add focus  on search open
-            - change article slider background
+            <![CDATA[
+            - add focus  on search open <br />
+            - change article slider background <br />
             - adjust badge in emotion boxes
+            ]]>
         </changes>
     </changelog>
 
     <changelog version="1.0.5">
-        <changes lang="de">Einkaufswelten-Elemente für Eleganz- und Classic-Hover-Effekt</changes>
-        <changes lang="en">Add emotion world elements for elegance and classic hover effetcs</changes>
+        <changes lang="de">
+            <![CDATA[
+            Einkaufswelten-Elemente für Eleganz- und Classic-Hover-Effekt
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            Add emotion world elements for elegance and classic hover effetcs
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.0.2">
-        <changes lang="de">Home Button entfernen</changes>
-        <changes lang="en">remove home button</changes>
+        <changes lang="de">
+            <![CDATA[
+            Home Button entfernen
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            remove home button
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.0.1">
-        <changes lang="de">Bug im Filter der Suche behoben</changes>
-        <changes lang="en">fix search filter bug</changes>
+        <changes lang="de">
+            <![CDATA[
+            Bug im Filter der Suche behoben
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            fix search filter bug
+            ]]>
+        </changes>
     </changelog>
 
     <changelog version="1.0.0">
-        <changes lang="de">Veröffentlichung</changes>
-        <changes lang="en">Release</changes>
+        <changes lang="de">
+            <![CDATA[
+            Veröffentlichung
+            ]]>
+        </changes>
+        <changes lang="en">
+            <![CDATA[
+            Release
+            ]]>
+        </changes>
     </changelog>
-
 </plugin>
